@@ -1,38 +1,24 @@
-# create-svelte
+# Projeto Integrador UNIVESP Turma 2022 Grupo 05
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+[DESCRIÇÃO]
 
-## Creating a project
+## Desenvolvimento
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Clone este repositório e inicialize com `npm install` (ou `pnpm install` ou `yarn`), inicie o servidor com:
 
 ```bash
 npm run dev
 
-# or start the server and open the app in a new browser tab
+# ou inicie o servidor e abra a pagina no navegador com:
 npm run dev -- --open
 ```
 
-## Building
+## Compilação
 
-To create a production version of your app:
+Para compilar a versão de produção, execute:
 
 ```bash
 npm run build
 ```
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Você pode visualizar a versão de produção com `npm run preview`.
