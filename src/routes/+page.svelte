@@ -1,19 +1,50 @@
 <script>
     import "../app.css";
     import { Button } from "$lib/components/ui/button/index.js";
+    import MaterialSymbolsChatBubbleRounded from '~icons/material-symbols/chat-bubble-rounded'
+    import MaterialSymbolsGroups2Rounded from '~icons/material-symbols/groups-2-rounded';
+    import MaterialSymbolsVolunteerActivismRounded from '~icons/material-symbols/volunteer-activism-rounded'
+    import MaterialSymbolsAlignHorizontalLeftRounded from '~icons/material-symbols/align-horizontal-left-rounded'
+    import MaterialSymbolsShoppingCartRounded from '~icons/material-symbols/shopping-cart-rounded'
+    import IcOutlineWhatsapp from '~icons/ic/outline-whatsapp'
 </script>
 <div class="flex flex-col w-full h-full">
 
     <nav class="flex-col w-full h-full flex justify-center sticky top-0 z-50">
         <ul class="flex flex-grow gap-2 px-8 py-4 bg-primary">
             <li class="p-1 items-center flex justify-start flex-1 text-primary-foreground font-bold text-2xl">Educador Físico</li>
-            <li class="items-center flex justify-center"><Button variant="outline" class="font-bold text-xl px-8" href="">ENTRE EM CONTATO</Button></li>
+            <li class="items-center flex justify-center">
+                <Button variant="outline" class="font-bold text-xl px-8 flex gap-2" href="">
+                    <span>ENTRE EM CONTATO</span>
+                    <MaterialSymbolsChatBubbleRounded/>
+                </Button>
+            </li>
         </ul>
         <ul class="flex gap-2 justify-center w-full bg-neutral-800">
-            <li class="items-center flex justify-center"><Button variant="link" class="text-white" href="#QuemSomos">Quem Somos</Button></li>
-            <li class="items-center flex justify-center"><Button variant="link" class="text-white" href="#NossosProjetos">Nossos Projetos</Button></li>
-            <li class="items-center flex justify-center"><Button variant="link" class="text-white" href="">Resultados</Button></li>
-            <li class="items-center flex justify-center"><Button variant="link" class="text-white" href="">Serviços</Button></li>
+            <li class="items-center flex justify-center">
+                <Button variant="link" class="text-white flex gap-2" href="#QuemSomos">
+                    <MaterialSymbolsGroups2Rounded/>
+                    <span>Quem Somos</span>
+                </Button>
+            </li>
+            <li class="items-center flex justify-center">
+                <Button variant="link" class="text-white flex gap-2" href="#NossosProjetos">
+                    <MaterialSymbolsVolunteerActivismRounded/>
+                    <span>Nossos Projetos</span>
+                </Button>
+            </li>
+            <li class="items-center flex justify-center">
+                <Button variant="link" class="text-white flex gap-2" href="">
+                    <MaterialSymbolsAlignHorizontalLeftRounded/>
+                    <span>Resultados</span>
+                </Button>
+            </li>
+            <li class="items-center flex justify-center">
+                <Button variant="link" class="text-white flex gap-2" href="">
+                    <MaterialSymbolsShoppingCartRounded/>
+                    <span>Serviços</span>
+                </Button>
+            </li>
     
         </ul>
     </nav>
@@ -57,8 +88,14 @@
                 <span class="font-bold text-xl">Bairro Aquele, Mogi das Cruzes - SP</span>
             </div>
             <div class="flex flex-col gap-1 items-end justify-center">
-                <span class="font-bold text-xl">(11) 91234-5678</span>
-                <span class="font-bold text-xl">(11) 91234-5678</span>
+                <div class="flex gap-2 items-center justify-center">
+                    <IcOutlineWhatsapp/>
+                    <span class="font-bold text-xl">(11) 91234-5678</span>
+                </div>
+                <div class="flex gap-2 items-center justify-center">
+                    <IcOutlineWhatsapp/>
+                    <span class="font-bold text-xl">(11) 91234-5678</span>
+                </div>
             </div>
         </div>
     </footer>
