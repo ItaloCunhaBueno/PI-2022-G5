@@ -54,7 +54,7 @@
 	<section id="QuemSomos" class="flex flex-wrap items-center w-full min-h-full bg-neutral-100">
 		<div class="flex flex-col justify-center w-full h-full gap-2 p-8 sm:w-1/2">
 			<p class="text-4xl font-bold">Quem somos</p>
-			<p class="text-2xl text-justify">
+			<p class="text-xl text-justify">
 				But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of
 				human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.
 			</p>
@@ -65,14 +65,16 @@
 	</section>
 
 	<section id="NossosProjetos" class="flex flex-wrap items-center w-full min-h-full bg-neutral-900 text-neutral-100">
-		<div class="flex flex-col items-center justify-center w-full h-full gap-1 p-8 sm:w-1/2">
-			<img class="object-contain w-auto mr-[32%] sm:w-96 rounded-lg" src="https://dummyimage.com/1000x800/aaaaaa/fff&text=placeholder" alt="placeholder" />
-			<img class="object-contain w-auto ml-[32%] sm:w-96 rounded-lg" src="https://dummyimage.com/1000x800/aaaaaa/fff&text=placeholder" alt="placeholder" />
-			<img class="object-contain w-auto mr-[32%] sm:w-96 rounded-lg" src="https://dummyimage.com/1000x800/aaaaaa/fff&text=placeholder" alt="placeholder" />
+		<div class="w-full h-full p-8 overflow-hidden sm:w-1/2">
+			<div class="flex flex-col items-center">
+				<img class="object-contain w-1/2 mr-[32%] rounded-lg" src="https://dummyimage.com/1000x800/aaaaaa/fff&text=placeholder" alt="placeholder" />
+				<img class="object-contain w-1/2 ml-[32%] rounded-lg" src="https://dummyimage.com/1000x800/aaaaaa/fff&text=placeholder" alt="placeholder" />
+				<img class="object-contain w-1/2 mr-[32%] rounded-lg" src="https://dummyimage.com/1000x800/aaaaaa/fff&text=placeholder" alt="placeholder" />
+			</div>
 		</div>
 		<div class="flex flex-col justify-center w-full h-full gap-2 p-8 sm:w-1/2">
 			<p class="text-4xl font-bold">Nossos projetos</p>
-			<p class="text-2xl text-justify">
+			<p class="text-xl text-justify">
 				But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of
 				human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.
 			</p>
@@ -100,7 +102,7 @@
 
 	<section id="Servicos" class="flex flex-col w-full min-h-full gap-2 p-8 bg-neutral-900 text-neutral-100">
 		<p class="text-4xl font-bold">Nossos serviços</p>
-		<div class="flex flex-wrap items-center justify-center w-full gap-2">
+		<div class="flex flex-wrap items-center justify-center w-full gap-4">
 			<Card.Root class="flex flex-col w-full sm:w-[250px] justify-between rounded-lg">
 				<Card.Header>
 					<Card.Title class="text-2xl">Plano A</Card.Title>
@@ -109,9 +111,7 @@
 						maximus tincidunt diam in gravida.
 					</Card.Description>
 				</Card.Header>
-				<Card.Footer class="flex justify-center">
-					<Button variant="outline">Contratar</Button>
-				</Card.Footer>
+				<Card.Footer class="flex justify-start text-xl font-bold">R$ 20,00</Card.Footer>
 			</Card.Root>
 			<Card.Root class="flex flex-col w-full sm:w-[250px] sm:h-[400px] justify-between rounded-lg">
 				<Card.Header>
@@ -121,9 +121,7 @@
 						maximus tincidunt diam in gravida.
 					</Card.Description>
 				</Card.Header>
-				<Card.Footer class="flex justify-center">
-					<Button>Contratar</Button>
-				</Card.Footer>
+				<Card.Footer class="flex justify-start text-xl font-bold">R$ 20,00</Card.Footer>
 			</Card.Root>
 			<Card.Root class="flex flex-col w-full sm:w-[250px] justify-between rounded-lg">
 				<Card.Header>
@@ -133,9 +131,7 @@
 						maximus tincidunt diam in gravida.
 					</Card.Description>
 				</Card.Header>
-				<Card.Footer class="flex justify-center">
-					<Button variant="outline">Contratar</Button>
-				</Card.Footer>
+				<Card.Footer class="flex justify-start text-xl font-bold">R$ 20,00</Card.Footer>
 			</Card.Root>
 		</div>
 	</section>
