@@ -83,7 +83,7 @@
 
 	<section id="Resultados" class="flex flex-col w-full !min-h-[755px] p-8 bg-neutral-100 justify-center items-center gap-14">
 		<!-- <div class="flex flex-col items-center w-full gap-2"> -->
-		<p class="text-4xl font-bold">Resultados</p>
+		<p class="text-5xl font-bold">Resultados</p>
 		<div class="flex flex-wrap w-full overflow-hidden rounded-lg lg:max-w-[60%] bg-pink-300">
 			<div class="flex flex-col flex-grow w-full gap-2 p-8 min-h-[480px] bg-primary text-primary-foreground sm:w-auto">
 				<p class="text-2xl font-bold">Benefícios na saúde:</p>
@@ -101,7 +101,7 @@
 	</section>
 
 	<section id="Servicos" class="flex flex-col w-full !min-h-[755px] gap-14 p-8 bg-neutral-900 text-neutral-100 justify-center">
-		<p class="text-4xl font-bold">Nossos serviços</p>
+		<p class="text-5xl font-bold">Nossos serviços</p>
 		<div class="flex items-center justify-center w-full gap-4">
 			<Card.Root class="flex flex-col w-full lg:w-[360px] lg:h-[320px] justify-between rounded-lg">
 				<Card.Header>
