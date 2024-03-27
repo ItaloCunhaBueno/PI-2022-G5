@@ -15,65 +15,65 @@
 
 <div class="flex flex-col w-full h-full">
 	<nav class="sticky top-0 z-50 flex flex-col justify-center w-full h-full">
-		<ul class="flex flex-grow gap-2 px-8 py-4 bg-primary">
-			<li class="flex items-center justify-start flex-1 p-1 text-2xl font-bold text-primary-foreground">Educador Físico</li>
+		<ul class="flex flex-grow gap-2 px-8 py-4 bg-primary !h-24 !max-h-24">
+			<li class="flex items-center justify-start flex-1 p-1 text-3xl font-bold text-primary-foreground">Educador Físico</li>
 			<li class="flex items-center justify-center">
-				<Button variant="outline" class="flex gap-2 px-8 text-xl font-bold" href="#Contato">
+				<Button variant="outline" class="!py-3 !px-6 text-base font-bold" href="#Contato">
 					<span>ENTRE EM CONTATO</span>
 				</Button>
 			</li>
 		</ul>
-		<ul class="flex justify-center w-full gap-2 bg-neutral-800">
+		<ul class="flex justify-center w-full gap-2 bg-neutral-800 !h-16 !max-h-16">
 			<li class="flex items-center justify-center">
-				<Button variant="link" class="flex gap-2 text-white" href="#QuemSomos">
+				<Button variant="link" class="flex gap-2 text-2xl text-white" href="#QuemSomos">
 					<MaterialSymbolsGroups2Rounded />
-					<span>Quem Somos</span>
+					<span class="">Quem Somos</span>
 				</Button>
 			</li>
 			<li class="flex items-center justify-center">
-				<Button variant="link" class="flex gap-2 text-white" href="#NossosProjetos">
+				<Button variant="link" class="flex gap-2 text-2xl text-white" href="#NossosProjetos">
 					<MaterialSymbolsVolunteerActivismRounded />
-					<span>Nossos Projetos</span>
+					<span class="">Nossos Projetos</span>
 				</Button>
 			</li>
 			<li class="flex items-center justify-center">
-				<Button variant="link" class="flex gap-2 text-white" href="#Resultados">
+				<Button variant="link" class="flex gap-2 text-2xl text-white" href="#Resultados">
 					<MaterialSymbolsAlignHorizontalLeftRounded />
-					<span>Resultados</span>
+					<span class="">Resultados</span>
 				</Button>
 			</li>
 			<li class="flex items-center justify-center">
-				<Button variant="link" class="flex gap-2 text-white" href="#Servicos">
+				<Button variant="link" class="flex gap-2 text-2xl text-white" href="#Servicos">
 					<MaterialSymbolsShoppingCartRounded />
-					<span>Serviços</span>
+					<span class="">Serviços</span>
 				</Button>
 			</li>
 		</ul>
 	</nav>
 
-	<section id="QuemSomos" class="flex flex-wrap items-center w-full min-h-full bg-neutral-100">
-		<div class="flex flex-col justify-center w-full h-full gap-2 p-8 sm:w-1/2">
-			<p class="text-4xl font-bold">Quem somos</p>
+	<section id="QuemSomos" class="flex flex-wrap items-center w-full !min-h-[755px] bg-neutral-100">
+		<div class="flex flex-col justify-center w-full h-full gap-4 p-8 sm:w-1/2">
+			<p class="text-5xl font-bold">Quem somos</p>
 			<p class="text-xl text-justify">
 				But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of
 				human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.
 			</p>
 		</div>
 		<div class="flex flex-col items-center justify-center w-full h-full p-8 sm:w-1/2">
-			<img class="w-full rounded-lg aspect-auto" src="https://dummyimage.com/600x600/aaaaaa/fff&text=placeholder" alt="placeholder" />
+			<img class="object-contain rounded-lg" src="https://dummyimage.com/645x584/aaaaaa/fff&text=placeholder" alt="placeholder" />
 		</div>
 	</section>
 
-	<section id="NossosProjetos" class="flex flex-wrap items-center w-full min-h-full bg-neutral-900 text-neutral-100">
+	<section id="NossosProjetos" class="flex flex-wrap items-center w-full !min-h-[755px] bg-neutral-900 text-neutral-100">
 		<div class="w-full h-full p-8 overflow-hidden sm:w-1/2">
-			<div class="flex flex-col items-center">
-				<img class="object-contain w-1/2 mr-[32%] rounded-lg" src="https://dummyimage.com/1000x800/aaaaaa/fff&text=placeholder" alt="placeholder" />
-				<img class="object-contain w-1/2 ml-[32%] rounded-lg" src="https://dummyimage.com/1000x800/aaaaaa/fff&text=placeholder" alt="placeholder" />
-				<img class="object-contain w-1/2 mr-[32%] rounded-lg" src="https://dummyimage.com/1000x800/aaaaaa/fff&text=placeholder" alt="placeholder" />
+			<div class="flex flex-col items-center gap-2 lg:gap-0">
+				<img class="object-cover w-full lg:w-auto lg:mr-[32%] rounded-lg" src="https://dummyimage.com/320x240/aaaaaa/fff&text=placeholder" alt="placeholder" />
+				<img class="object-cover w-full lg:w-auto lg:ml-[32%] rounded-lg" src="https://dummyimage.com/320x240/aaaaaa/fff&text=placeholder" alt="placeholder" />
+				<img class="object-cover w-full lg:w-auto lg:mr-[32%] rounded-lg" src="https://dummyimage.com/320x240/aaaaaa/fff&text=placeholder" alt="placeholder" />
 			</div>
 		</div>
-		<div class="flex flex-col justify-center w-full h-full gap-2 p-8 sm:w-1/2">
-			<p class="text-4xl font-bold">Nossos projetos</p>
+		<div class="flex flex-col justify-center w-full h-full gap-4 p-8 sm:w-1/2">
+			<p class="text-5xl font-bold">Projetos</p>
 			<p class="text-xl text-justify">
 				But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of
 				human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful.
@@ -81,88 +81,82 @@
 		</div>
 	</section>
 
-	<section id="Resultados" class="flex w-full min-h-full p-8 bg-neutral-100">
-		<div class="flex flex-col items-center w-full gap-2">
-			<p class="text-4xl font-bold">Resultados</p>
-			<div class="flex flex-wrap w-full overflow-hidden rounded-lg sm:justify-center lg:max-w-[60%]">
-				<div class="flex flex-col flex-grow w-full gap-2 p-8 bg-primary text-primary-foreground sm:w-auto">
-					<p class="font-bold">Benefícios na saúde:</p>
-					<div class="flex flex-col items-center justify-center w-full gap-2">
-						<span>Resultados #1</span>
-						<span>Resultados #2</span>
-						<span>Resultados #3</span>
-						<span>Resultados #4</span>
-						<span>Resultados #5</span>
-					</div>
+	<section id="Resultados" class="flex flex-col w-full !min-h-[755px] p-8 bg-neutral-100 justify-center items-center gap-14">
+		<!-- <div class="flex flex-col items-center w-full gap-2"> -->
+		<p class="text-4xl font-bold">Resultados</p>
+		<div class="flex flex-wrap w-full overflow-hidden rounded-lg lg:max-w-[60%] bg-pink-300">
+			<div class="flex flex-col flex-grow w-full gap-2 p-8 min-h-[480px] bg-primary text-primary-foreground sm:w-auto">
+				<p class="text-2xl font-bold">Benefícios na saúde:</p>
+				<div class="flex flex-col items-start justify-center w-full gap-2 px-4 text-xl">
+					<span>Resultados #1</span>
+					<span>Resultados #2</span>
+					<span>Resultados #3</span>
+					<span>Resultados #4</span>
+					<span>Resultados #5</span>
 				</div>
-				<img class="sm:w-[60%] h-auto w-full object-contain" src="https://dummyimage.com/1000x600/aaaaaa/fff&text=placeholder" alt="placeholder" />
 			</div>
+			<img class="sm:w-[60%] h-auto w-full object-cover" src="https://dummyimage.com/740x480/aaaaaa/fff&text=placeholder" alt="placeholder" />
 		</div>
+		<!-- </div> -->
 	</section>
 
-	<section id="Servicos" class="flex flex-col w-full min-h-full gap-2 p-8 bg-neutral-900 text-neutral-100">
+	<section id="Servicos" class="flex flex-col w-full !min-h-[755px] gap-14 p-8 bg-neutral-900 text-neutral-100 justify-center">
 		<p class="text-4xl font-bold">Nossos serviços</p>
-		<div class="flex flex-wrap items-center justify-center w-full gap-4">
-			<Card.Root class="flex flex-col w-full sm:w-[250px] justify-between rounded-lg">
+		<div class="flex items-center justify-center w-full gap-4">
+			<Card.Root class="flex flex-col w-full lg:w-[360px] lg:h-[320px] justify-between rounded-lg">
 				<Card.Header>
-					<Card.Title class="text-2xl">Plano A</Card.Title>
-					<Card.Description class="text-justify"
-						>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla urna a condimentum porttitor. Proin commodo orci lobortis, auctor ipsum eget, suscipit massa. Vestibulum dolor justo, varius ac mauris non, lobortis accumsan nunc. Mauris
-						maximus tincidunt diam in gravida.
-					</Card.Description>
+					<Card.Title class="text-4xl">Plano A</Card.Title>
+					<Card.Description class="text-xl text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla urna a condimentum porttitor. Proin commodo orci lobortis, auctor ipsum eget, suscipit massa.</Card.Description>
 				</Card.Header>
-				<Card.Footer class="flex justify-start text-xl font-bold">R$ 20,00</Card.Footer>
+				<Card.Footer class="flex justify-start text-4xl font-bold">R$ 20,00</Card.Footer>
 			</Card.Root>
-			<Card.Root class="flex flex-col w-full sm:w-[250px] sm:h-[400px] justify-between rounded-lg">
+			<Card.Root class="flex flex-col w-full lg:w-[360px] lg:h-[480px] justify-between rounded-lg">
 				<Card.Header>
-					<Card.Title class="text-2xl">Plano B</Card.Title>
-					<Card.Description class="text-justify"
+					<Card.Title class="text-4xl">Plano B</Card.Title>
+					<Card.Description class="text-xl text-justify"
 						>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla urna a condimentum porttitor. Proin commodo orci lobortis, auctor ipsum eget, suscipit massa. Vestibulum dolor justo, varius ac mauris non, lobortis accumsan nunc. Mauris
 						maximus tincidunt diam in gravida.
 					</Card.Description>
 				</Card.Header>
-				<Card.Footer class="flex justify-start text-xl font-bold">R$ 20,00</Card.Footer>
+				<Card.Footer class="flex justify-start text-4xl font-bold">R$ 20,00</Card.Footer>
 			</Card.Root>
-			<Card.Root class="flex flex-col w-full sm:w-[250px] justify-between rounded-lg">
+			<Card.Root class="flex flex-col w-full lg:w-[360px] lg:h-[320px] justify-between rounded-lg">
 				<Card.Header>
-					<Card.Title class="text-2xl">Plano C</Card.Title>
-					<Card.Description class="text-justify"
-						>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla urna a condimentum porttitor. Proin commodo orci lobortis, auctor ipsum eget, suscipit massa. Vestibulum dolor justo, varius ac mauris non, lobortis accumsan nunc. Mauris
-						maximus tincidunt diam in gravida.
-					</Card.Description>
+					<Card.Title class="text-4xl">Plano C</Card.Title>
+					<Card.Description class="text-xl text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla urna a condimentum porttitor. Proin commodo orci lobortis, auctor ipsum eget, suscipit massa.</Card.Description>
 				</Card.Header>
-				<Card.Footer class="flex justify-start text-xl font-bold">R$ 20,00</Card.Footer>
+				<Card.Footer class="flex justify-start text-4xl font-bold">R$ 20,00</Card.Footer>
 			</Card.Root>
 		</div>
 	</section>
 
-	<section id="Contato" class="flex justify-center w-full min-h-full p-8 bg-neutral-100">
+	<section id="Contato" class="flex justify-center w-full !min-h-[755px] p-8 bg-neutral-100">
 		<div class="flex flex-wrap w-full overflow-hidden rounded-lg lg:max-w-[60%]">
-			<img src="https://dummyimage.com/300x600/aaaaaa/fff&text=placeholder" alt="" />
-			<div class="flex flex-col justify-center flex-grow h-full gap-2 p-8 text-white bg-primary">
-				<p class="text-4xl font-bold">Entre em contato</p>
+			<img class="object-cover w-full h-96 lg:w-auto lg:h-auto" src="https://dummyimage.com/475x732/aaaaaa/fff&text=placeholder" alt="" />
+			<div class="flex flex-col justify-center flex-grow !min-w-[645px] !min-h-[732px] gap-2 p-8 text-xl text-white bg-primary">
+				<p class="text-5xl font-bold">Entre em contato</p>
 				<p>Informe seu e-mail ou telefone e retornaremos o mais breve possível.</p>
-				<div class="flex flex-col gap-2 mt-4">
+				<div class="flex flex-col gap-2 mt-4 text-2xl">
 					<span class="font-bold">Nome</span>
-					<Input type="text" id="nome" placeholder="Digite seu nome." />
+					<Input class="h-14" type="text" id="nome" placeholder="Digite seu nome." />
 					<span class="mt-2 font-bold">Telefone ou e-mail</span>
-					<Input type="text" placeholder="Digite seu telefone ou e-mail." />
+					<Input class="h-14" type="text" placeholder="Digite seu telefone ou e-mail." />
 					<span class="mt-2 font-bold">Mensagem</span>
-					<Textarea class="h-32" placeholder="Mensagem..." />
-					<Button variant="outline" class="font-bold text-black">ENVIAR</Button>
+					<Textarea class="h-44" placeholder="Mensagem..." />
+					<Button variant="outline" class="!py-3 !px-6 text-base font-bold text-black">ENVIAR</Button>
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<footer class="flex items-center gap-2 p-16 text-lg text-white bg-primary">
+	<footer class="flex items-center gap-2 p-16 text-base text-white bg-primary !min-h-[304px]">
 		<div class="flex flex-col items-start justify-center w-full gap-4 sm:w-1/2">
 			<div class="flex flex-col items-start justify-center gap-1">
-				<span class="text-xl font-bold">Educador Físico</span>
+				<span class="text-2xl font-bold">Educador Físico</span>
 				<span>CREF/SP 123456</span>
 			</div>
 			<div class="flex flex-col items-start justify-center gap-1">
-				<span class="text-xl font-bold">Educador Físico</span>
+				<span class="text-2xl font-bold">Educador Físico</span>
 				<span>CREF/SP 123456</span>
 			</div>
 		</div>
