@@ -11,6 +11,36 @@
 	import MaterialSymbolsAlignHorizontalLeftRounded from '~icons/material-symbols/align-horizontal-left-rounded';
 	import MaterialSymbolsShoppingCartRounded from '~icons/material-symbols/shopping-cart-rounded';
 	import IcOutlineWhatsapp from '~icons/ic/outline-whatsapp';
+
+	let mensagem = '';
+	let nome = '';
+	let tel_email = '';
+
+	async function enviar() {
+		if (!mensagem && !nome && !tel_email) {
+			console.log('preencha todos os campos');
+			return;
+		}
+
+		let formdata = {
+			nome: nome,
+			tel_email: tel_email,
+			mensagem: mensagem
+		};
+
+		// let formdata = new FormData();
+		// formdata.append('nome', nome);
+		// formdata.append('tel_email', tel_email);
+		// formdata.append('mensagem', mensagem);
+		console.log(formdata);
+
+		const response = await fetch('http://127.0.0.1:7894/api/novamensagem', { method: 'POST', body: JSON.stringify(formdata) });
+		let resposta = await response.json();
+		console.log(resposta);
+		// if (resposta.status == 200) {
+		// 	console.log(resposta.mensagem);
+		// }
+	}
 </script>
 
 <div class="flex flex-col w-full h-full">
@@ -138,12 +168,12 @@
 				<p>Informe seu e-mail ou telefone e retornaremos o mais breve possível.</p>
 				<div class="flex flex-col gap-2 mt-4 text-2xl">
 					<span class="font-bold">Nome</span>
-					<Input class="h-14" type="text" id="nome" placeholder="Digite seu nome." />
+					<Input class="h-14" type="text" id="nome" placeholder="Digite seu nome." bind:value={nome} />
 					<span class="mt-2 font-bold">Telefone ou e-mail</span>
-					<Input class="h-14" type="text" placeholder="Digite seu telefone ou e-mail." />
+					<Input class="h-14" type="text" placeholder="Digite seu telefone ou e-mail." bind:value={tel_email} />
 					<span class="mt-2 font-bold">Mensagem</span>
-					<Textarea class="h-44" placeholder="Mensagem..." />
-					<Button variant="outline" class="!py-3 !px-6 text-base font-bold text-black">ENVIAR</Button>
+					<Textarea class="h-44" placeholder="Mensagem..." bind:value={mensagem} />
+					<Button variant="outline" class="!py-3 !px-6 text-base font-bold text-black" on:click={() => enviar()}>ENVIAR</Button>
 				</div>
 			</div>
 		</div>
