@@ -1,13 +1,10 @@
 <script>
 	import '../app.css';
-	import { fade, slide } from 'svelte/transition';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { toast } from 'svelte-sonner';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Textarea } from '$lib/components/ui/textarea/index.js';
-	import * as Form from '$lib/components/ui/form/index.js';
 	import { Input } from '$lib/components/ui/input';
-	import MaterialSymbolsChatBubbleRounded from '~icons/material-symbols/chat-bubble-rounded';
 	import MaterialSymbolsGroups2Rounded from '~icons/material-symbols/groups-2-rounded';
 	import MaterialSymbolsVolunteerActivismRounded from '~icons/material-symbols/volunteer-activism-rounded';
 	import MaterialSymbolsAlignHorizontalLeftRounded from '~icons/material-symbols/align-horizontal-left-rounded';
