@@ -93,6 +93,16 @@
 		let resposta = await response.json();
 		if (resposta.status == 200) {
 			toast.success(resposta.mensagem);
+			nome = '';
+			telefone = '';
+			email = '';
+			texto = '';
+			valid_mensagem = {
+				nome: false,
+				telefone: false,
+				email: false,
+				texto: false
+			};
 		}
 	}
 </script>
