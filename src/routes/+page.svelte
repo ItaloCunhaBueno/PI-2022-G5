@@ -1,6 +1,7 @@
 <script>
 	import '../app.css';
 	import { Button } from '$lib/components/ui/button/index.js';
+	import { toast } from 'svelte-sonner';
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Textarea } from '$lib/components/ui/textarea/index.js';
 	import * as Form from '$lib/components/ui/form/index.js';
@@ -12,34 +13,87 @@
 	import MaterialSymbolsShoppingCartRounded from '~icons/material-symbols/shopping-cart-rounded';
 	import IcOutlineWhatsapp from '~icons/ic/outline-whatsapp';
 
-	let mensagem = '';
 	let nome = '';
-	let tel_email = '';
+	let telefone = '';
+	let email = '';
+	let texto = '';
+
+	let valid_mensagem = {
+		nome: false,
+		telefone: false,
+		email: false,
+		texto: false
+	};
+
+	function validaCampo(input, tipo) {
+		if (tipo == 'nome') {
+			let valido = /^[A-ZÀ-Ÿ][A-zÀ-ÿ']+\s([A-zÀ-ÿ']\s?)*[A-ZÀ-Ÿ][A-zÀ-ÿ']+$/.test(input);
+			if (valido) {
+				valid_mensagem.nome = true;
+			} else {
+				valid_mensagem.nome = false;
+			}
+			return;
+		}
+
+		if (tipo == 'telefone') {
+			let valido = /^\(\d{2}\) \d{4,5}-\d{4}$/gi.test(input);
+			if (valido) {
+				valid_mensagem.telefone = true;
+			} else {
+				valid_mensagem.telefone = false;
+			}
+			return;
+		}
+
+		if (tipo == 'email') {
+			let valido = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(input);
+			if (valido) {
+				valid_mensagem.email = true;
+			} else {
+				valid_mensagem.email = false;
+			}
+			return;
+		}
+
+		if (tipo == 'texto') {
+			if (input.length > 10) {
+				valid_mensagem.texto = true;
+			} else {
+				valid_mensagem.texto = false;
+			}
+			return;
+		}
+	}
+
+	function formataTelefone(input) {
+		let valor = input.replace(/\D/g, '');
+		valor = valor.replace(/(\d{2})(\d)/, '($1) $2');
+		valor = valor.replace(/(\d)(\d{4})$/, '$1-$2');
+		return valor;
+	}
 
 	async function enviar() {
-		if (!mensagem && !nome && !tel_email) {
-			console.log('preencha todos os campos');
+		if (Object.values(valid_mensagem).includes(false)) {
+			toast.error('Por favor, preencha todos os campos.', {
+				description: 'Um ou mais campos preenchidos não são válidos.'
+			});
 			return;
 		}
 
 		let formdata = {
-			nome: nome,
-			tel_email: tel_email,
-			mensagem: mensagem
+			id: null,
+			nome: nome ? nome : null,
+			telefone: telefone ? telefone : null,
+			email: email ? email : null,
+			texto: texto ? texto : null
 		};
 
-		// let formdata = new FormData();
-		// formdata.append('nome', nome);
-		// formdata.append('tel_email', tel_email);
-		// formdata.append('mensagem', mensagem);
-		console.log(formdata);
-
-		const response = await fetch('http://127.0.0.1:7894/api/novamensagem', { method: 'POST', body: JSON.stringify(formdata) });
+		const response = await fetch('http://127.0.0.1:6789/api/novamensagem', { method: 'POST', body: JSON.stringify(formdata), headers: { 'Content-Type': 'application/json' } });
 		let resposta = await response.json();
-		console.log(resposta);
-		// if (resposta.status == 200) {
-		// 	console.log(resposta.mensagem);
-		// }
+		if (resposta.status == 200) {
+			toast.success(resposta.mensagem);
+		}
 	}
 </script>
 
@@ -53,7 +107,7 @@
 				</Button>
 			</li>
 		</ul>
-		<ul class="flex justify-center w-full gap-2 bg-neutral-800 !h-16 !max-h-16">
+		<ul class="flex flex-wrap justify-center w-full gap-2 bg-neutral-800 !min-h-16">
 			<li class="flex items-center justify-center">
 				<Button variant="link" class="flex gap-2 text-2xl text-white" href="#QuemSomos">
 					<MaterialSymbolsGroups2Rounded />
@@ -132,7 +186,7 @@
 
 	<section id="Servicos" class="flex flex-col w-full !min-h-[755px] gap-14 p-8 bg-neutral-900 text-neutral-100 justify-center">
 		<p class="text-5xl font-bold">Nossos serviços</p>
-		<div class="flex items-center justify-center w-full gap-4">
+		<div class="flex flex-wrap items-center justify-center w-full gap-4">
 			<Card.Root class="flex flex-col w-full lg:w-[360px] lg:h-[320px] justify-between rounded-lg">
 				<Card.Header>
 					<Card.Title class="text-4xl">Plano A</Card.Title>
@@ -161,19 +215,70 @@
 	</section>
 
 	<section id="Contato" class="flex justify-center w-full !min-h-[755px] p-8 bg-neutral-100">
-		<div class="flex flex-wrap w-full overflow-hidden rounded-lg lg:max-w-[60%]">
-			<img class="object-cover w-full h-96 lg:w-auto lg:h-auto" src="https://dummyimage.com/475x732/aaaaaa/fff&text=placeholder" alt="" />
-			<div class="flex flex-col justify-center flex-grow !min-w-[645px] !min-h-[732px] gap-2 p-8 text-xl text-white bg-primary">
+		<div class="flex flex-wrap w-full overflow-hidden rounded-lg sm:max-w-[90%]">
+			<img class="object-cover w-full h-96 xl:w-auto xl:h-auto" src="https://dummyimage.com/475x732/aaaaaa/fff&text=placeholder" alt="" />
+			<div class="flex flex-col justify-center flex-grow !min-w-[350px] !min-h-[732px] gap-2 p-8 text-xl text-white bg-primary">
 				<p class="text-5xl font-bold">Entre em contato</p>
-				<p>Informe seu e-mail ou telefone e retornaremos o mais breve possível.</p>
+				<p>Informe seu e-mail e telefone que retornaremos o mais breve possível.</p>
 				<div class="flex flex-col gap-2 mt-4 text-2xl">
-					<span class="font-bold">Nome</span>
-					<Input class="h-14" type="text" id="nome" placeholder="Digite seu nome." bind:value={nome} />
-					<span class="mt-2 font-bold">Telefone ou e-mail</span>
-					<Input class="h-14" type="text" placeholder="Digite seu telefone ou e-mail." bind:value={tel_email} />
+					<span class="font-bold">Nome Completo</span>
+					<Input
+						class="h-14"
+						type="text"
+						id="nome"
+						placeholder="Digite seu nome."
+						bind:value={nome}
+						on:keyup={() => {
+							validaCampo(nome, 'nome');
+						}}
+						required
+					/>
+					{#if !valid_mensagem.nome}
+						<span class="text-sm text-red-500">Por favor, digite um nome válido.</span>
+					{/if}
+					<span class="mt-2 font-bold">E-mail</span>
+					<Input
+						class="h-14"
+						type="email"
+						placeholder="Digite seu e-mail."
+						bind:value={email}
+						on:keyup={() => {
+							validaCampo(email, 'email');
+						}}
+						required
+					/>
+					{#if !valid_mensagem.email}
+						<span class="text-sm text-red-500">Por favor, digite um e-mail válido.</span>
+					{/if}
+					<span class="mt-2 font-bold">Telefone</span>
+					<Input
+						class="h-14"
+						type="tel"
+						placeholder="(##) #####-#### ou (##) ####-####"
+						bind:value={telefone}
+						on:keyup={() => {
+							telefone = formataTelefone(telefone);
+							validaCampo(telefone, 'telefone');
+						}}
+						required
+					/>
+					{#if !valid_mensagem.telefone}
+						<span class="text-sm text-red-500">Por favor, digite um telefone válido.</span>
+					{/if}
 					<span class="mt-2 font-bold">Mensagem</span>
-					<Textarea class="h-44" placeholder="Mensagem..." bind:value={mensagem} />
-					<Button variant="outline" class="!py-3 !px-6 text-base font-bold text-black" on:click={() => enviar()}>ENVIAR</Button>
+					<Textarea
+						class="h-44"
+						placeholder="Mensagem..."
+						bind:value={texto}
+						on:keyup={() => {
+							validaCampo(texto, 'texto');
+						}}
+						required
+					/>
+					{#if !valid_mensagem.texto}
+						<span class="text-sm text-red-500">Por favor, digite uma mensagem.</span>
+					{/if}
+					<Button variant="outline" class="!py-3 !px-6 text-base font-bold text-black mt-2" on:click={() => enviar()}>ENVIAR</Button>
 				</div>
 			</div>
 		</div>
