@@ -1,5 +1,6 @@
 <script>
 	import '../app.css';
+	import { fade, slide } from 'svelte/transition';
 	import { Button } from '$lib/components/ui/button/index.js';
 	import { toast } from 'svelte-sonner';
 	import * as Card from '$lib/components/ui/card/index.js';
@@ -12,6 +13,31 @@
 	import MaterialSymbolsAlignHorizontalLeftRounded from '~icons/material-symbols/align-horizontal-left-rounded';
 	import MaterialSymbolsShoppingCartRounded from '~icons/material-symbols/shopping-cart-rounded';
 	import IcOutlineWhatsapp from '~icons/ic/outline-whatsapp';
+	import LineMdLoadingTwotoneLoop from '~icons/line-md/loading-twotone-loop';
+
+	function fadein(node, direction) {
+		const observer = new IntersectionObserver((entries) => {
+			if (entries[0].isIntersecting) {
+				node.classList.add(`fade-in-${direction}`);
+				node.style.opacity = '1';
+			} else {
+				node.classList.remove(`fade-in-${direction}`);
+				node.style.opacity = '0';
+			}
+		});
+
+		observer.observe(node);
+
+		return {
+			destroy() {
+				node.classList.remove(`fade-in-${direction}`);
+				node.style.opacity = '0';
+				observer.disconnect();
+			}
+		};
+	}
+
+	let enviando = false;
 
 	let nome = '';
 	let telefone = '';
@@ -81,6 +107,8 @@
 			return;
 		}
 
+		enviando = true;
+
 		let formdata = {
 			id: null,
 			nome: nome ? nome : null,
@@ -89,21 +117,27 @@
 			texto: texto ? texto : null
 		};
 
-		const response = await fetch('http://127.0.0.1:6789/api/novamensagem', { method: 'POST', body: JSON.stringify(formdata), headers: { 'Content-Type': 'application/json' } });
-		let resposta = await response.json();
-		if (resposta.status == 200) {
-			toast.success(resposta.mensagem);
-			nome = '';
-			telefone = '';
-			email = '';
-			texto = '';
-			valid_mensagem = {
-				nome: false,
-				telefone: false,
-				email: false,
-				texto: false
-			};
+		try {
+			const response = await fetch('http://127.0.0.1:6789/api/novamensagem', { method: 'POST', body: JSON.stringify(formdata), headers: { 'Content-Type': 'application/json' } });
+			let resposta = await response.json();
+			if (resposta.status == 200) {
+				toast.success(resposta.mensagem);
+				nome = '';
+				telefone = '';
+				email = '';
+				texto = '';
+				valid_mensagem = {
+					nome: false,
+					telefone: false,
+					email: false,
+					texto: false
+				};
+			}
+		} catch (error) {
+			// console.log(error);
+			toast.error(error.message);
 		}
+		enviando = false;
 	}
 </script>
 
@@ -145,7 +179,7 @@
 		</ul>
 	</nav>
 
-	<section id="QuemSomos" class="flex flex-wrap items-center w-full !min-h-[755px] bg-neutral-100">
+	<section id="QuemSomos" class="flex fade-in-left opacity-0 flex-wrap items-center w-full !min-h-[755px] bg-neutral-100" use:fadein={'left'}>
 		<div class="flex flex-col justify-center w-full h-full gap-4 p-8 sm:w-1/2">
 			<p class="text-5xl font-bold">Quem somos</p>
 			<p class="text-xl text-justify">
@@ -158,7 +192,7 @@
 		</div>
 	</section>
 
-	<section id="NossosProjetos" class="flex flex-wrap items-center w-full !min-h-[755px] bg-neutral-900 text-neutral-100">
+	<section id="NossosProjetos" class="flex fade-in-right opacity-0 flex-wrap items-center w-full !min-h-[755px] bg-neutral-900 text-neutral-100" use:fadein={'right'}>
 		<div class="w-full h-full p-8 overflow-hidden sm:w-1/2">
 			<div class="flex flex-col items-center gap-2 lg:gap-0">
 				<img class="object-cover w-full lg:w-auto lg:mr-[32%] rounded-lg" src="https://dummyimage.com/320x240/aaaaaa/fff&text=placeholder" alt="placeholder" />
@@ -175,7 +209,7 @@
 		</div>
 	</section>
 
-	<section id="Resultados" class="flex flex-col w-full !min-h-[755px] p-8 bg-neutral-100 justify-center items-center gap-14">
+	<section id="Resultados" class="flex fade-in-left opacity-0 flex-col w-full !min-h-[755px] p-8 bg-neutral-100 justify-center items-center gap-14" use:fadein={'left'}>
 		<!-- <div class="flex flex-col items-center w-full gap-2"> -->
 		<p class="text-5xl font-bold">Resultados</p>
 		<div class="flex flex-wrap w-full overflow-hidden rounded-lg lg:max-w-[60%] bg-pink-300">
@@ -194,7 +228,7 @@
 		<!-- </div> -->
 	</section>
 
-	<section id="Servicos" class="flex flex-col w-full !min-h-[755px] gap-14 p-8 bg-neutral-900 text-neutral-100 justify-center">
+	<section id="Servicos" class="flex fade-in-right opacity-0 flex-col w-full !min-h-[755px] gap-14 p-8 bg-neutral-900 text-neutral-100 justify-center" use:fadein={'right'}>
 		<p class="text-5xl font-bold">Nossos serviços</p>
 		<div class="flex flex-wrap items-center justify-center w-full gap-4">
 			<Card.Root class="flex flex-col w-full lg:w-[360px] lg:h-[320px] justify-between rounded-lg">
@@ -224,7 +258,7 @@
 		</div>
 	</section>
 
-	<section id="Contato" class="flex justify-center w-full !min-h-[755px] p-8 bg-neutral-100">
+	<section id="Contato" class="flex fade-in-left opacity-0 justify-center w-full !min-h-[755px] p-8 bg-neutral-100" use:fadein={'left'}>
 		<div class="flex flex-wrap w-full overflow-hidden rounded-lg sm:max-w-[90%]">
 			<img class="object-cover w-full h-96 xl:w-auto xl:h-auto" src="https://dummyimage.com/475x732/aaaaaa/fff&text=placeholder" alt="" />
 			<div class="flex flex-col justify-center flex-grow !min-w-[350px] !min-h-[732px] gap-2 p-8 text-xl text-white bg-primary">
@@ -288,7 +322,11 @@
 					{#if !valid_mensagem.texto}
 						<span class="text-sm text-red-500">Por favor, digite uma mensagem.</span>
 					{/if}
-					<Button variant="outline" class="!py-3 !px-6 text-base font-bold text-black mt-2" on:click={() => enviar()}>ENVIAR</Button>
+					{#if !enviando}
+						<Button variant="outline" class="!py-3 !px-6 text-base font-bold text-black mt-2" on:click={() => enviar()}>ENVIAR</Button>
+					{:else}
+						<Button variant="outline" disabled class="!py-3 !px-6 text-base font-bold text-black mt-2" on:click={() => enviar()}><LineMdLoadingTwotoneLoop class="pr-2 text-2xl" /></Button>
+					{/if}
 				</div>
 			</div>
 		</div>
@@ -323,3 +361,32 @@
 		</div>
 	</footer>
 </div>
+
+<style>
+	@keyframes fade-in-left {
+		0% {
+			transform: translateX(-50px);
+			opacity: 0;
+		}
+		100% {
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+	@keyframes fade-in-right {
+		0% {
+			transform: translateX(50px);
+			opacity: 0;
+		}
+		100% {
+			transform: translateX(0);
+			opacity: 1;
+		}
+	}
+	.fade-in-left {
+		animation: fade-in-left 1s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s both;
+	}
+	.fade-in-right {
+		animation: fade-in-right 1s cubic-bezier(0.39, 0.575, 0.565, 1) 0.5s both;
+	}
+</style>
