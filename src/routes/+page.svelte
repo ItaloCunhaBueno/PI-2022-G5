@@ -5,6 +5,7 @@
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Textarea } from '$lib/components/ui/textarea/index.js';
 	import { Input } from '$lib/components/ui/input';
+	import logo from '$lib/images/logo.svg';
 	import MaterialSymbolsGroups2Rounded from '~icons/material-symbols/groups-2-rounded';
 	import MaterialSymbolsVolunteerActivismRounded from '~icons/material-symbols/volunteer-activism-rounded';
 	import MaterialSymbolsAlignHorizontalLeftRounded from '~icons/material-symbols/align-horizontal-left-rounded';
@@ -140,7 +141,12 @@
 
 <div class="flex flex-col w-full h-full">
 	<nav class="sticky top-0 z-50 flex flex-col justify-center w-full h-full">
-		<ul class="flex flex-grow gap-2 px-8 py-4 bg-primary !h-24 !max-h-24">
+		<ul class="flex flex-grow gap-2 py-4 px-8 bg-primary !h-24 !max-h-24 items-center">
+			<div class="!h-12 p-1 bg-white rounded-full aspect-square">
+				<a href="/">
+					<img src={logo} alt="logo" class="" />
+				</a>
+			</div>
 			<li class="flex items-center justify-start flex-1 p-1 text-3xl font-bold text-primary-foreground">Educador Físico</li>
 			<li class="flex items-center justify-center">
 				<Button variant="outline" class="!py-3 !px-6 text-base font-bold" href="#Contato">
