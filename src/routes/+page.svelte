@@ -5,7 +5,7 @@
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Textarea } from '$lib/components/ui/textarea/index.js';
 	import { Input } from '$lib/components/ui/input';
-	import logo from '$lib/images/logo.svg';
+	import logo from '$lib/images/logo-projeto.svg';
 	import MaterialSymbolsGroups2Rounded from '~icons/material-symbols/groups-2-rounded';
 	import MaterialSymbolsVolunteerActivismRounded from '~icons/material-symbols/volunteer-activism-rounded';
 	import MaterialSymbolsAlignHorizontalLeftRounded from '~icons/material-symbols/align-horizontal-left-rounded';
@@ -138,6 +138,49 @@
 		enviando = false;
 	}
 </script>
+
+<div class="bg-shade-10 flex flex-col gap-[132px] w-full h-full rounded-2xl">
+	<header class="mx-auto mt-8 max-w-7xl flex justify-between items-center w-full px-6 py-4">
+		<a href="/">
+			<img src={logo} alt="logo" class="" />
+		</a>
+		<nav>
+			<ul class="font-text text-base text-shade-40 flex space-x-14 items-center tracking-[.15px]">
+				<li>O Profissional</li>
+				<li>Como Funciona</li>
+				<li>Benefícios</li>
+				<li>Resultados</li>
+			</ul>
+		</nav>
+		<button class="flex items-center space-x-[-10px]">
+			<div class="px-6 py-3 text-shade-40 font-text font-medium leading-5 tracking-[.1px] bg-color-50 rounded-[40px] btn-contact">
+				Entre em contato
+			</div>
+			<div class="flex justify-center w-10 h-10 bg-color-50 rounded-full">
+				<img  alt="test" src="../src\lib\images\arrow_outward.svg" width="18" height="18" />
+			</div>			
+		</button>
+	</header>
+	<section class="mx-auto w-full max-w-7xl flex flex-col gap-16">
+		<div class="flex justify-between items-center h-full">
+			<div>
+				<h2 class="font-heading text-shade-40 text-8xl">Pedro</h2>
+				<h2 class="font-heading text-shade-40 text-8xl">Salvarani</h2>
+			</div>
+			<div class="flex flex-wrap self-end max-w-[540px]">
+				<p class="font-text text-base text-shade-40 tracking-[.5px]">Com mais de 20 anos de experiência, Pedro é um renomado professor de Educação Física, <strong>com especialização em Pilates e atividade física voltada para o envelhecimento</strong>.</p>
+			</div>
+		</div>
+		<img alt="" src="../src\lib\images\AdobeStock_369344205 1.png" />
+	</section>
+	<div class="flex justify-between items-center mx-auto w-full max-w-7xl bg-color-50 px-16 py-6 rounded-2xl">
+		<h5 class="font-heading text-2xl text-shade-40">Atendimento à domicilio</h5>
+		<img alt="" src="../src\lib\images\asterisk.svg" />
+		<h5 class="font-heading text-2xl text-shade-40">Comodidade</h5>
+		<img alt="" src="../src\lib\images\asterisk.svg" />
+		<h5 class="font-heading text-2xl text-shade-40">Exercícios personalizados</h5>
+	</div>
+</div>
 
 <div class="flex flex-col w-full h-full">
 	<nav class="sticky top-0 z-50 flex flex-col justify-center w-full h-full">
