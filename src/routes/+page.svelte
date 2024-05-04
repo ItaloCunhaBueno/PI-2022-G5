@@ -161,7 +161,7 @@
 			</div>			
 		</button>
 	</header>
-	<section class="mx-auto w-full max-w-7xl flex flex-col gap-16">
+	<section class="mx-auto w-full max-w-7xl flex flex-col gap-16 max-[1366px]:px-6">
 		<div class="flex justify-between items-center h-full">
 			<div>
 				<h2 class="font-heading text-shade-40 text-8xl">Pedro</h2>
@@ -173,16 +173,131 @@
 		</div>
 		<img alt="" src="../src\lib\images\AdobeStock_369344205 1.png" />
 	</section>
-	<div class="flex justify-between items-center mx-auto w-full max-w-7xl bg-color-50 px-16 py-6 rounded-2xl">
-		<h5 class="font-heading text-2xl text-shade-40">Atendimento à domicilio</h5>
-		<img alt="" src="../src\lib\images\asterisk.svg" />
-		<h5 class="font-heading text-2xl text-shade-40">Comodidade</h5>
-		<img alt="" src="../src\lib\images\asterisk.svg" />
-		<h5 class="font-heading text-2xl text-shade-40">Exercícios personalizados</h5>
-	</div>
+	<section class="mx-auto max-[1366px]:px-6 w-full max-w-7xl">
+		<div class="flex justify-between items-center bg-color-50 px-16 py-6 rounded-2xl">
+			<h5 class="font-heading text-2xl text-shade-40">Atendimento à domicilio</h5>
+			<img alt="" src="../src\lib\images\asterisk.svg" />
+			<h5 class="font-heading text-2xl text-shade-40">Comodidade</h5>
+			<img alt="" src="../src\lib\images\asterisk.svg" />
+			<h5 class="font-heading text-2xl text-shade-40">Exercícios personalizados</h5>
+		</div>
+	</section>	
+	<section class="mx-auto w-full max-w-7xl flex justify-between items-center h-full max-[1366px]:px-6">
+		<h3 class="font-heading text-shade-40 text-2xl uppercase self-start">O profissional</h3>
+		<div class="flex flex-col max-w-[714px] gap-4">
+			<p class="font-text text-base text-neutral-80 tracking-[.5px]">Pedro Salvarani tem 49 anos e é professor de Educação Física. Graduou-se pela Universidade de Mogi das Cruzes e possui pós-graduação em Educação Especial, além de formação em <strong>Pilates e Atividade Física aplicada no Envelhecimento</strong>.</p>
+			<p class="font-text text-base text-neutral-80 tracking-[.5px]">Com mais de 20 anos de experiência na área, Pedro atuou em escolas, clínicas e academias.
+				No entanto, foi através do <strong>atendimento domiciliar</strong> que encontrou a oportunidade de desenvolver treinos com total eficiência. Acompanhando, orientando, motivando e evoluindo, ele alcançou resultados satisfatórios na vida de pessoas que acreditaram nele, mas, sobretudo, em si mesmas.</p>
+		</div>
+	</section>
+	<section class="mx-auto w-full max-w-7xl flex flex-col gap-10 justify-between max-[1366px]:px-6">
+		<h3 class="font-heading text-shade-40 text-2xl uppercase">Como funciona</h3>
+		<div class="flex justify-between items-center gap-8">
+			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6">
+				<img alt="" src="../src\lib\images\home.svg" width="48" />
+				<div class="flex flex-col gap-3">
+					<h4 class="font-text text-[22px] leading-7">Local e Horário</h4>
+					<p class="font-text text-base text-neutral-80 tracking-[.5px]">Os treinos são realizados na sua residência ou no espaço que lhe seja favorável, com horários flexíveis e que se ajustam à sua rotina diária.</p>
+				</div>
+			</div>
+			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6">
+				<img alt="" src="../src\lib\images\show_chart.svg" width="48" />
+				<div class="flex flex-col gap-3">
+					<h4 class="font-text text-[22px] leading-7">Acompanhamento</h4>
+					<p class="font-text text-base text-neutral-80 tracking-[.5px]">Acompanhamento em tempo integral permitindo melhor orientação, correção e segurança na prática da atividade.</p>
+				</div>
+			</div>
+			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6">
+				<img alt="" src="../src\lib\images\fitness_center.svg" width="48" />
+				<div class="flex flex-col gap-3">
+					<h4 class="font-text text-[22px] leading-7">Treinos</h4>
+					<p class="font-text text-base text-neutral-80 tracking-[.5px]">Nossos planos de treino são elaborados de maneira 100% individual a partir de uma minuciosa avaliação.</p>
+				</div>
+			</div>
+			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6">
+				<img alt="" src="../src\lib\images\animation.svg" width="48" />
+				<div class="flex flex-col gap-3">
+					<h4 class="font-text text-[22px] leading-7">Dinamismo</h4>
+					<p class="font-text text-base text-neutral-80 tracking-[.5px]">A diversificação e evolução dos exercícios são realizados rotineiramente, o que torna as aulas dinâmicas.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="mx-auto w-full max-w-7xl flex justify-between items-center h-full max-[1366px]:px-6">
+		<div class="flex flex-col gap-6 self-start">
+			<h3 class="font-heading text-shade-40 text-2xl uppercase self-start">Benefícios</h3>
+			<p class="font-text text-base text-neutral-80 tracking-[.5px] max-w-[280px]">Saúde e Bem-Estar Personalizados: Descubra os <strong>Benefícios Exclusivos</strong> do Treinamento Domiciliar</p>
+		</div>
+		<div class="flex flex-col w-full max-w-[620px]">
+			<div class="flex items-center py-6 px-4 gap-6 border-b border-neutral-20">
+				<h5 class="font-heading text-[28px]/9 text-color-80">01</h5>
+				<p class="font-text font-medium text-base/5">Aumento da disposição e autoestima</p>
+			</div>
+			<div class="flex items-center py-6 px-4 gap-6 border-b border-neutral-20">
+				<h5 class="font-heading text-[28px]/9 text-color-80">02</h5>
+				<p class="font-text font-medium text-base/5">Previne e reduz mortalidade por doenças crônicas</p>
+			</div>
+			<div class="flex items-center py-6 px-4 gap-6 border-b border-neutral-20">
+				<h5 class="font-heading text-[28px]/9 text-color-80">03</h5>
+				<p class="font-text font-medium text-base/5">Aumenta força e resistência muscular</p>
+			</div>
+			<div class="flex items-center py-6 px-4 gap-6 border-b border-neutral-20">
+				<h5 class="font-heading text-[28px]/9 text-color-80">04</h5>
+				<p class="font-text font-medium text-base/5">Reduz sintomas depressivos</p>
+			</div>
+			<div class="flex items-center py-6 px-4 gap-6 border-b border-neutral-20">
+				<h5 class="font-heading text-[28px]/9 text-color-80">05</h5>
+				<p class="font-text font-medium text-base/5">Diminuição do risco de lesões</p>
+			</div>
+			<div class="flex items-center py-6 px-4 gap-6 border-b border-neutral-20">
+				<h5 class="font-heading text-[28px]/9 text-color-80">06</h5>
+				<p class="font-text font-medium text-base/5">Treino personalizado e individual</p>
+			</div>
+		</div>		
+	</section>
+	<section class="flex gap-8 mx-auto w-full max-w-7xl flex max-[1366px]:px-6">
+		<img class="rounded-2xl" alt="" src="../src\lib\images\istockphoto-1239568544-1024x1024 1.png" />
+		<img class="rounded-2xl" alt="" src="../src\lib\images\idosos-se-exercitando_4 1.png" />
+		<img class="rounded-2xl" alt="" src="../src\lib\images\Se__nior-03 1.png" />
+		<img class="rounded-2xl" alt="" src="../src\lib\images\depositphotos_249590430-stock-photo-happy-mature-people-doing-exercises 1.png" />
+	</section>
+	<section class="flex flex-col gap-[52px] w-full mx-auto max-w-7xl max-[1366px]:px-6">
+		<h4 class="font-text text-[22px] text-neutral-40 leading-7 uppercase">Contato</h4>
+		<div class="flex flex-col gap-10">
+			<div>
+				<h2 class="font-heading text-shade-40 text-8xl">Vamos</h2>
+				<h2 class="font-heading text-shade-40 text-8xl">Conversar?</h2>
+			</div>
+			<form class="flex flex-col gap-8 w-full max-w-[624px] self-end">
+				<input class="focus:outline-none font-text font-medium text-base/5 text-shade-40 py-5 px-2 border-b border-neutral-20 tracking-[.1px] placeholder-shade-40" type="text" placeholder="Seu nome*">
+				<input class="focus:outline-none font-text font-medium text-base/5 text-shade-40 py-5 px-2 border-b border-neutral-20 tracking-[.1px] placeholder-shade-40" type="text" placeholder="Telefone*">
+				<input class="focus:outline-none font-text font-medium text-base/5 text-shade-40 py-5 px-2 border-b border-neutral-20 tracking-[.1px] placeholder-shade-40" type="text" placeholder="E-mail">
+				<textarea class="focus:outline-none font-text font-medium text-base/5 text-shade-40 py-5 px-2 border-b border-neutral-20 tracking-[.1px]" rows="5">Sua mensagem*</textarea>
+			</form>			
+		</div>
+	</section>
+	<footer class="bg-shade-20 py-[52px] rounded-b-2xl">
+		<div class="w-full mx-auto max-w-7xl max-[1366px]:px-6 flex flex-col">
+			<div class="flex flex-col gap-4">
+				<h4 class="font-heading text-2xl text-neutral-50">Nosso contato</h4>
+				<div class="flex flex-col gap-1">
+					<p class="font-text text-shade-40 text-base tracking-[.5px]">pedrosalvarani@email.com</p>
+					<p class="font-text text-shade-40 text-base tracking-[.5px]">11 99999-9999</p>
+				</div>
+			</div>
+			<div class="flex gap-4 mx-auto">				
+				<img alt="" src="../src\lib\images\facebook-logo-blue-circle-large-transparent-png 1.png" />
+				<img alt="" src="../src\lib\images\pngegg 1.png" />
+			</div>
+			<div class="flex flex-col mx-auto mt-[100px]">
+				<p class="text-center font-text text-shade-40 text-base tracking-[.5px]">Copyright Pedro Salvarani - 0000000000000000 - 2024</p>
+				<p class="text-center font-text text-shade-40 text-base tracking-[.5px]">Todos os direitos reservados</p>
+			</div>
+		</div>
+	</footer>
 </div>
 
-<div class="flex flex-col w-full h-full">
+<!-- <div class="flex flex-col w-full h-full">
 	<nav class="sticky top-0 z-50 flex flex-col justify-center w-full h-full">
 		<ul class="flex flex-grow gap-2 py-4 px-8 bg-primary !h-24 !max-h-24 items-center">
 			<div class="!h-12 p-1 bg-white rounded-full aspect-square">
@@ -256,7 +371,6 @@
 	</section>
 
 	<section id="Resultados" class="flex fade-in-left opacity-0 flex-col w-full !min-h-[755px] p-8 bg-neutral-100 justify-center items-center gap-14" use:fadein={'left'}>
-		<!-- <div class="flex flex-col items-center w-full gap-2"> -->
 		<p class="text-5xl font-bold">Resultados</p>
 		<div class="flex flex-wrap w-full overflow-hidden rounded-lg lg:max-w-[60%] bg-pink-300">
 			<div class="flex flex-col flex-grow w-full gap-2 p-8 min-h-[480px] bg-primary text-primary-foreground sm:w-auto">
@@ -271,7 +385,6 @@
 			</div>
 			<img class="sm:w-[60%] h-auto w-full object-cover" src="https://dummyimage.com/740x480/aaaaaa/fff&text=placeholder" alt="placeholder" />
 		</div>
-		<!-- </div> -->
 	</section>
 
 	<section id="Servicos" class="flex fade-in-right opacity-0 flex-col w-full !min-h-[755px] gap-14 p-8 bg-neutral-900 text-neutral-100 justify-center" use:fadein={'right'}>
@@ -406,7 +519,7 @@
 			</div>
 		</div>
 	</footer>
-</div>
+</div> -->
 
 <style>
 	@keyframes fade-in-left {
