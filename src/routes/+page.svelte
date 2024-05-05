@@ -12,6 +12,7 @@
 	import MaterialSymbolsShoppingCartRounded from '~icons/material-symbols/shopping-cart-rounded';
 	import IcOutlineWhatsapp from '~icons/ic/outline-whatsapp';
 	import LineMdLoadingTwotoneLoop from '~icons/line-md/loading-twotone-loop';
+	import { scrollTo, scrollRef } from 'svelte-scrolling';
 
 	function fadein(node, direction) {
 		const observer = new IntersectionObserver((entries) => {
@@ -146,13 +147,13 @@
 		</a>
 		<nav>
 			<ul class="font-text text-base text-shade-40 flex space-x-14 items-center tracking-[.15px]">
-				<li>O Profissional</li>
-				<li>Como Funciona</li>
-				<li>Benefícios</li>
-				<li>Resultados</li>
+				<li><a use:scrollTo={{ ref: 'profissional', duration: 1000, offset: -80 }} href="#profissional">O Profissional</a></li>
+				<li><a use:scrollTo={{ ref: 'funcionamento', duration: 1000, offset: -80 }} href="#funcionamento">Como Funciona</a></li>
+				<li><a use:scrollTo={{ ref: 'beneficios', duration: 1000, offset: -80 }} href="#beneficios">Benefícios</a></li>
+				<!-- <li><a href="#resultados">Resultados</a></li> -->
 			</ul>
 		</nav>
-		<button class="flex items-center space-x-[-10px]">
+		<button use:scrollTo={{ ref: 'contato', duration: 1000, }} class="flex items-center space-x-[-10px]">
 			<div class="px-6 py-3 text-shade-40 font-text font-medium leading-5 tracking-[.1px] bg-color-50 rounded-[40px] btn-contact">
 				Entre em contato
 			</div>
@@ -182,7 +183,7 @@
 			<h5 class="font-heading text-2xl text-shade-40">Exercícios personalizados</h5>
 		</div>
 	</section>	
-	<section class="mx-auto w-full max-w-7xl flex justify-between items-center h-full max-[1366px]:px-6">
+	<section id="profissional" use:scrollRef={'profissional'} class="mx-auto w-full max-w-7xl flex justify-between items-center h-full max-[1366px]:px-6">
 		<h3 class="font-heading text-shade-40 text-2xl uppercase self-start">O profissional</h3>
 		<div class="flex flex-col max-w-[714px] gap-4">
 			<p class="font-text text-base text-neutral-80 tracking-[.5px]">Pedro Salvarani tem 49 anos e é professor de Educação Física. Graduou-se pela Universidade de Mogi das Cruzes e possui pós-graduação em Educação Especial, além de formação em <strong>Pilates e Atividade Física aplicada no Envelhecimento</strong>.</p>
@@ -190,31 +191,31 @@
 				No entanto, foi através do <strong>atendimento domiciliar</strong> que encontrou a oportunidade de desenvolver treinos com total eficiência. Acompanhando, orientando, motivando e evoluindo, ele alcançou resultados satisfatórios na vida de pessoas que acreditaram nele, mas, sobretudo, em si mesmas.</p>
 		</div>
 	</section>
-	<section class="mx-auto w-full max-w-7xl flex flex-col gap-10 justify-between max-[1366px]:px-6">
+	<section id="funcionamento" use:scrollRef={'funcionamento'} class="mx-auto w-full max-w-7xl flex flex-col gap-10 justify-between max-[1366px]:px-6">
 		<h3 class="font-heading text-shade-40 text-2xl uppercase">Como funciona</h3>
 		<div class="flex justify-between items-center gap-8">
-			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6">
+			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6 rounded-2xl">
 				<img alt="" src="../src\lib\images\home.svg" width="48" />
 				<div class="flex flex-col gap-3">
 					<h4 class="font-text text-[22px] leading-7">Local e Horário</h4>
 					<p class="font-text text-base text-neutral-80 tracking-[.5px]">Os treinos são realizados na sua residência ou no espaço que lhe seja favorável, com horários flexíveis e que se ajustam à sua rotina diária.</p>
 				</div>
 			</div>
-			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6">
+			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6 rounded-2xl">
 				<img alt="" src="../src\lib\images\show_chart.svg" width="48" />
 				<div class="flex flex-col gap-3">
 					<h4 class="font-text text-[22px] leading-7">Acompanhamento</h4>
 					<p class="font-text text-base text-neutral-80 tracking-[.5px]">Acompanhamento em tempo integral permitindo melhor orientação, correção e segurança na prática da atividade.</p>
 				</div>
 			</div>
-			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6">
+			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6 rounded-2xl">
 				<img alt="" src="../src\lib\images\fitness_center.svg" width="48" />
 				<div class="flex flex-col gap-3">
 					<h4 class="font-text text-[22px] leading-7">Treinos</h4>
 					<p class="font-text text-base text-neutral-80 tracking-[.5px]">Nossos planos de treino são elaborados de maneira 100% individual a partir de uma minuciosa avaliação.</p>
 				</div>
 			</div>
-			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6">
+			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6 rounded-2xl">
 				<img alt="" src="../src\lib\images\animation.svg" width="48" />
 				<div class="flex flex-col gap-3">
 					<h4 class="font-text text-[22px] leading-7">Dinamismo</h4>
@@ -223,7 +224,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="mx-auto w-full max-w-7xl flex justify-between items-center h-full max-[1366px]:px-6">
+	<section id="beneficios" use:scrollRef={'beneficios'} class="mx-auto w-full max-w-7xl flex justify-between items-center h-full max-[1366px]:px-6">
 		<div class="flex flex-col gap-6 self-start">
 			<h3 class="font-heading text-shade-40 text-2xl uppercase self-start">Benefícios</h3>
 			<p class="font-text text-base text-neutral-80 tracking-[.5px] max-w-[280px]">Saúde e Bem-Estar Personalizados: Descubra os <strong>Benefícios Exclusivos</strong> do Treinamento Domiciliar</p>
@@ -261,7 +262,7 @@
 		<img class="rounded-2xl" alt="" src="../src\lib\images\Se__nior-03 1.png" />
 		<img class="rounded-2xl" alt="" src="../src\lib\images\depositphotos_249590430-stock-photo-happy-mature-people-doing-exercises 1.png" />
 	</section>
-	<section class="flex flex-col gap-[52px] w-full mx-auto max-w-7xl max-[1366px]:px-6">
+	<section id="contato" use:scrollRef={'contato'} class="flex flex-col gap-[52px] w-full mx-auto max-w-7xl max-[1366px]:px-6">
 		<h4 class="font-text text-[22px] text-neutral-40 leading-7 uppercase">Contato</h4>
 		<div class="flex flex-col gap-10">
 			<div>
@@ -273,6 +274,7 @@
 				<input class="focus:outline-none font-text font-medium text-base/5 text-shade-40 py-5 px-2 border-b border-neutral-20 tracking-[.1px] placeholder-shade-40" type="text" placeholder="Telefone*">
 				<input class="focus:outline-none font-text font-medium text-base/5 text-shade-40 py-5 px-2 border-b border-neutral-20 tracking-[.1px] placeholder-shade-40" type="text" placeholder="E-mail">
 				<textarea class="focus:outline-none font-text font-medium text-base/5 text-shade-40 py-5 px-2 border-b border-neutral-20 tracking-[.1px]" rows="5">Sua mensagem*</textarea>
+				<button class="mt-3 bg-color-50 py-4 rounded-2xl font-text text-base/5 font-medium tracking-[.1px] text-shade-40">Enviar mensagem</button>
 			</form>			
 		</div>
 	</section>
