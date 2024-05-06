@@ -38,6 +38,6 @@ def nova_mensagem(mensagem: Mensagens):
     return {"status":200, "mensagem":"Mensagem enviada com sucesso!"}
 
 
-if __name__ == "__main__":
-    from uvicorn import run
-    run("app:app", port=6789, log_level="info", reload=True)
+# if __name__ == "__main__":
+#     from uvicorn import run
+#     run("app:app", port=6789, log_level="info", reload=True)
