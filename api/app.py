@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from models import Mensagens
 from sqlmodel import Session, SQLModel, create_engine
 
-DB_URL = os.environ.get("POSTGRES_URL")
+DB_URL = os.environ.get("SQL_ALCHEMY_URL")
 
 app = FastAPI()
 origins = ["*"]
