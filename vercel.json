@@ -2,10 +2,6 @@
 	"env": {
 		"PYTHONPATH": "api/"
 	},
-	"build": {
-		"src": "api/app.py",
-		"use": "@vercel/python"
-	},
 	"functions": {
 		"api/app.py": {
 			"includeFiles": "/models.py"
