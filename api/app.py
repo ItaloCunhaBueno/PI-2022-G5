@@ -25,12 +25,12 @@ engine = create_engine(DB_URL)
 SQLModel.metadata.create_all(bind=engine)
 
 @app.get("/")
-def index():
+async def index():
     """ENDPOINT PRINCIPAL."""
     return None
 
 @app.post("/novamensagem")
-def nova_mensagem(mensagem: Mensagens):
+async def nova_mensagem(mensagem: Mensagens):
     """ENDPOINT PARA ENVIAR UMA NOVA MENSAGEM."""
     with Session(engine) as session:
         session.add(mensagem)
