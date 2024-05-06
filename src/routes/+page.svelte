@@ -116,7 +116,7 @@
 		};
 
 		try {
-			const response = await fetch('http://127.0.0.1:6789/api/novamensagem', { method: 'POST', body: JSON.stringify(formdata), headers: { 'Content-Type': 'application/json' } });
+			const response = await fetch('/api/novamensagem', { method: 'POST', body: JSON.stringify(formdata), headers: { 'Content-Type': 'application/json' } });
 			let resposta = await response.json();
 			if (resposta.status == 200) {
 				toast.success(resposta.mensagem);
@@ -132,7 +132,7 @@
 				};
 			}
 		} catch (error) {
-			// console.log(error);
+			console.log(error);
 			toast.error(error.message);
 		}
 		enviando = false;

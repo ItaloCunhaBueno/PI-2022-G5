@@ -20,7 +20,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# engine = create_engine("sqlite:///api/database.db")
 engine = create_engine(DB_URL)
 
 SQLModel.metadata.create_all(bind=engine)
@@ -30,7 +29,7 @@ def index():
     """ENDPOINT PRINCIPAL."""
     return None
 
-@app.post("/api/novamensagem")
+@app.post("/novamensagem")
 def nova_mensagem(mensagem: Mensagens):
     """ENDPOINT PARA ENVIAR UMA NOVA MENSAGEM."""
     with Session(engine) as session:
