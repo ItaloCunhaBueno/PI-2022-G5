@@ -5,13 +5,26 @@
 	import * as Card from '$lib/components/ui/card/index.js';
 	import { Textarea } from '$lib/components/ui/textarea/index.js';
 	import { Input } from '$lib/components/ui/input';
-	import logo from '$lib/images/logo-projeto.svg';
-	import MaterialSymbolsGroups2Rounded from '~icons/material-symbols/groups-2-rounded';
-	import MaterialSymbolsVolunteerActivismRounded from '~icons/material-symbols/volunteer-activism-rounded';
-	import MaterialSymbolsAlignHorizontalLeftRounded from '~icons/material-symbols/align-horizontal-left-rounded';
-	import MaterialSymbolsShoppingCartRounded from '~icons/material-symbols/shopping-cart-rounded';
-	import IcOutlineWhatsapp from '~icons/ic/outline-whatsapp';
-	import LineMdLoadingTwotoneLoop from '~icons/line-md/loading-twotone-loop';
+	import logo from '$lib/images/icons/logo.svg';
+	import seta from '$lib/images/icons/arrow_outward.svg';
+	import asterisco from '$lib/images/icons/asterisk.svg';
+	import local from '$lib/images/icons/home.svg';
+	import acompanhamento from '$lib/images/icons/show_chart.svg';
+	import treinos from '$lib/images/icons/fitness_center.svg';
+	import dinamismo from '$lib/images/icons/animation.svg';
+	import fotoPrincipal from '$lib/images/principal.png';
+	import foto1 from '$lib/images/foto1.png';
+	import foto2 from '$lib/images/foto2.png';
+	import foto3 from '$lib/images/foto3.png';
+	import foto4 from '$lib/images/foto4.png';
+	import facebook from '$lib/images/icons/facebook.png';
+	import instagram from '$lib/images/icons/instagram.png';
+	// import MaterialSymbolsGroups2Rounded from '~icons/material-symbols/groups-2-rounded';
+	// import MaterialSymbolsVolunteerActivismRounded from '~icons/material-symbols/volunteer-activism-rounded';
+	// import MaterialSymbolsAlignHorizontalLeftRounded from '~icons/material-symbols/align-horizontal-left-rounded';
+	// import MaterialSymbolsShoppingCartRounded from '~icons/material-symbols/shopping-cart-rounded';
+	// import IcOutlineWhatsapp from '~icons/ic/outline-whatsapp';
+	// import LineMdLoadingTwotoneLoop from '~icons/line-md/loading-twotone-loop';
 	import { scrollTo, scrollRef } from 'svelte-scrolling';
 
 	function fadein(node, direction) {
@@ -158,7 +171,7 @@
 				Entre em contato
 			</div>
 			<div class="flex justify-center w-10 h-10 bg-color-50 rounded-full">
-				<img  alt="test" src="../src\lib\images\arrow_outward.svg" width="18" height="18" />
+				<img  alt="seta" src={seta} width="18" height="18" />
 			</div>			
 		</button>
 	</header>
@@ -172,14 +185,14 @@
 				<p class="font-text text-base text-shade-40 tracking-[.5px]">Com mais de 20 anos de experiência, Pedro é um renomado professor de Educação Física, <strong>com especialização em Pilates e atividade física voltada para o envelhecimento</strong>.</p>
 			</div>
 		</div>
-		<img alt="" src="../src\lib\images\AdobeStock_369344205 1.png" />
+		<img alt="Homem adulto se exercitando dentro de casa" src={fotoPrincipal} />
 	</section>
 	<section class="mx-auto max-[1366px]:px-6 w-full max-w-7xl">
 		<div class="flex justify-between items-center bg-color-50 px-16 py-6 rounded-2xl">
 			<h5 class="font-heading text-2xl text-shade-40">Atendimento à domicilio</h5>
-			<img alt="" src="../src\lib\images\asterisk.svg" />
+			<img alt="asterisco" src={asterisco} />
 			<h5 class="font-heading text-2xl text-shade-40">Comodidade</h5>
-			<img alt="" src="../src\lib\images\asterisk.svg" />
+			<img alt="asterisco" src={asterisco} />
 			<h5 class="font-heading text-2xl text-shade-40">Exercícios personalizados</h5>
 		</div>
 	</section>	
@@ -195,28 +208,28 @@
 		<h3 class="font-heading text-shade-40 text-2xl uppercase">Como funciona</h3>
 		<div class="flex justify-between items-center gap-8">
 			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6 rounded-2xl">
-				<img alt="" src="../src\lib\images\home.svg" width="48" />
+				<img alt="local e horário" src={local} width="48" />
 				<div class="flex flex-col gap-3">
 					<h4 class="font-text text-[22px] leading-7">Local e Horário</h4>
 					<p class="font-text text-base text-neutral-80 tracking-[.5px]">Os treinos são realizados na sua residência ou no espaço que lhe seja favorável, com horários flexíveis e que se ajustam à sua rotina diária.</p>
 				</div>
 			</div>
 			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6 rounded-2xl">
-				<img alt="" src="../src\lib\images\show_chart.svg" width="48" />
+				<img alt="acompanhamento" src={acompanhamento} width="48" />
 				<div class="flex flex-col gap-3">
 					<h4 class="font-text text-[22px] leading-7">Acompanhamento</h4>
 					<p class="font-text text-base text-neutral-80 tracking-[.5px]">Acompanhamento em tempo integral permitindo melhor orientação, correção e segurança na prática da atividade.</p>
 				</div>
 			</div>
 			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6 rounded-2xl">
-				<img alt="" src="../src\lib\images\fitness_center.svg" width="48" />
+				<img alt="treinos" src={treinos} width="48" />
 				<div class="flex flex-col gap-3">
 					<h4 class="font-text text-[22px] leading-7">Treinos</h4>
 					<p class="font-text text-base text-neutral-80 tracking-[.5px]">Nossos planos de treino são elaborados de maneira 100% individual a partir de uma minuciosa avaliação.</p>
 				</div>
 			</div>
 			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6 rounded-2xl">
-				<img alt="" src="../src\lib\images\animation.svg" width="48" />
+				<img alt="dinamismo" src={dinamismo} width="48" />
 				<div class="flex flex-col gap-3">
 					<h4 class="font-text text-[22px] leading-7">Dinamismo</h4>
 					<p class="font-text text-base text-neutral-80 tracking-[.5px]">A diversificação e evolução dos exercícios são realizados rotineiramente, o que torna as aulas dinâmicas.</p>
@@ -257,10 +270,10 @@
 		</div>		
 	</section>
 	<section class="flex gap-8 mx-auto w-full max-w-7xl flex max-[1366px]:px-6">
-		<img class="rounded-2xl" alt="" src="../src\lib\images\istockphoto-1239568544-1024x1024 1.png" />
-		<img class="rounded-2xl" alt="" src="../src\lib\images\idosos-se-exercitando_4 1.png" />
-		<img class="rounded-2xl" alt="" src="../src\lib\images\Se__nior-03 1.png" />
-		<img class="rounded-2xl" alt="" src="../src\lib\images\depositphotos_249590430-stock-photo-happy-mature-people-doing-exercises 1.png" />
+		<img class="rounded-2xl" alt="Homem idoso se exercitando dentro de casa" src={foto1} />
+		<img class="rounded-2xl" alt="Casal de idosos se exercitando" src={foto2} />
+		<img class="rounded-2xl" alt="Homem idoso se exercitando" src={foto3} />
+		<img class="rounded-2xl" alt="Casal de idosos se exercitando na academia" src={foto4} />
 	</section>
 	<section id="contato" use:scrollRef={'contato'} class="flex flex-col gap-[52px] w-full mx-auto max-w-7xl max-[1366px]:px-6">
 		<h4 class="font-text text-[22px] text-neutral-40 leading-7 uppercase">Contato</h4>
@@ -288,8 +301,8 @@
 				</div>
 			</div>
 			<div class="flex gap-4 mx-auto">				
-				<img alt="" src="../src\lib\images\facebook-logo-blue-circle-large-transparent-png 1.png" />
-				<img alt="" src="../src\lib\images\pngegg 1.png" />
+				<a href="https://www.facebook.com" target="_blank"><img alt="facebook" src={facebook} /></a>
+				<a href="https://www.instagram.com" target="_blank"><img alt="instagram" src={instagram} /></a>
 			</div>
 			<div class="flex flex-col mx-auto mt-[100px]">
 				<p class="text-center font-text text-shade-40 text-base tracking-[.5px]">Copyright Pedro Salvarani - 0000000000000000 - 2024</p>
