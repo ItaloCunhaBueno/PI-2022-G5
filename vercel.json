@@ -1,0 +1,11 @@
+{
+	"env": {
+		"PYTHONPATH": "api/"
+	},
+	"functions": {
+		"api/app.py": {
+			"includeFiles": "/models.py"
+		}
+	},
+	"routes": [{ "src": "/", "dest": "api/app.py" }]
+}
