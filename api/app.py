@@ -1,14 +1,13 @@
 
-from pathlib import Path
+import os
 
-from dotenv import dotenv_values
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from models import Mensagens
 from sqlmodel import Session, SQLModel, create_engine
 
-ENV = dotenv_values(Path(Path(__file__).parent,".env"))
-print(ENV)
+DB_URL = os.environ.get("POSTGRES_URL")
+
 app = FastAPI()
 origins = ["*"]
 
@@ -22,7 +21,7 @@ app.add_middleware(
 )
 
 # engine = create_engine("sqlite:///api/database.db")
-engine = create_engine(ENV["CONNECTIONSTRING"])
+engine = create_engine(DB_URL)
 
 SQLModel.metadata.create_all(bind=engine)
 
