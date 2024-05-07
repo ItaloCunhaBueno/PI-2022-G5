@@ -47,6 +47,36 @@ const config = {
 				card: {
 					DEFAULT: "hsl(var(--card) / <alpha-value>)",
 					foreground: "hsl(var(--card-foreground) / <alpha-value>)"
+				},
+				// adicionando cores do projeto do figma
+				shade: {
+					10: "#FFFFFF",
+					20: "#F8F8F8",
+					30: "#E8E8E8",
+					40: "#121212",
+				},
+				neutral: {
+					10: "#E8E8E8",
+					20: "#D1D1D1",
+					30: "#BABABA",
+					40: "#A3A3A3",
+					50: "#8C8C8C",
+					60: "#707070",
+					70: "#545454",
+					80: "#383838",
+					90: "#1C1C1C",
+				},
+				// nome generico para caso haja necessidade de alterar a cor principal
+				color: {
+					10: "#FCFFE9",
+					20: "#FAFFD4",
+					30: "#F7FFBE",
+					40: "#F5FFA9",
+					50: "#F2FF93",
+					60: "#D4E176",
+					70: "#B6C358",
+					80: "#99A53B",
+					90: "#7B881D",
 				}
 			},
 			borderRadius: {
@@ -55,7 +85,9 @@ const config = {
 				sm: "calc(var(--radius) - 4px)"
 			},
 			fontFamily: {
-				sans: [...fontFamily.sans]
+				sans: [...fontFamily.sans],
+				heading: ['Urbanist', 'sans-serif'],
+				text: ['Roboto', 'sans-serif']
 			}
 		}
 	},
