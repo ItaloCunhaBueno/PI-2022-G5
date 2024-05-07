@@ -3,11 +3,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-	/* scroll-behavior: smooth; */
-	/* font-family: 'Nunito', sans-serif; */
-}
-
 @layer base {
 	:root {
 		--background: 0 0% 100%;

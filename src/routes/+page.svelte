@@ -99,9 +99,9 @@
 
 		try {
 			const response = await fetch('/api/app/novamensagem', { method: 'POST', body: JSON.stringify(formdata), headers: { 'Content-Type': 'application/json' } });
-			let resposta = await response.json();
-			if (resposta.status == 200) {
-				toast.success(resposta.mensagem);
+			if (response.status == 200) {
+				let resposta = await response.json();
+				toast.success('SUCESSO', { description: resposta.mensagem });
 				nome = '';
 				telefone = '';
 				email = '';
@@ -112,17 +112,21 @@
 					email: false,
 					texto: false
 				};
+			} else {
+				toast.error('ERRO', {
+					description: 'Não foi possivel enviar a mensagem.'
+				});
 			}
 		} catch (error) {
 			console.log(error);
-			toast.error(error.message);
+			toast.error('ERRO', { description: error.message });
 		}
 		enviando = false;
 	}
 </script>
 
 <div class="bg-shade-10 flex flex-col gap-[132px] w-full h-full rounded-2xl">
-	<header class="mx-auto mt-8 max-w-7xl flex justify-between items-center w-full px-6 py-4">
+	<header class="flex items-center justify-between w-full px-6 py-4 mx-auto mt-8 max-w-7xl">
 		<a href="/">
 			<img src={logo} alt="logo" class="" />
 		</a>
@@ -133,17 +137,15 @@
 				<li><a use:scrollTo={{ ref: 'beneficios', duration: 1000, offset: -80 }} href="#beneficios">Benefícios</a></li>
 			</ul>
 		</nav>
-		<button use:scrollTo={{ ref: 'contato', duration: 1000, }} class="flex items-center space-x-[-10px]">
-			<div class="px-6 py-3 text-shade-40 font-text font-medium leading-5 tracking-[.1px] bg-color-50 rounded-[40px] btn-contact">
-				Entre em contato
+		<button use:scrollTo={{ ref: 'contato', duration: 1000 }} class="flex items-center space-x-[-10px]">
+			<div class="px-6 py-3 text-shade-40 font-text font-medium leading-5 tracking-[.1px] bg-color-50 rounded-[40px] btn-contact">Entre em contato</div>
+			<div class="flex justify-center w-10 h-10 rounded-full bg-color-50">
+				<img alt="seta" src={seta} width="18" height="18" />
 			</div>
-			<div class="flex justify-center w-10 h-10 bg-color-50 rounded-full">
-				<img  alt="seta" src={seta} width="18" height="18" />
-			</div>			
 		</button>
 	</header>
 	<section class="mx-auto w-full max-w-7xl flex flex-col gap-16 max-[1366px]:px-6">
-		<div class="flex justify-between items-center h-full">
+		<div class="flex items-center justify-between h-full">
 			<div>
 				<h2 class="font-heading text-shade-40 text-8xl">Pedro</h2>
 				<h2 class="font-heading text-shade-40 text-8xl">Salvarani</h2>
@@ -155,25 +157,29 @@
 		<img alt="Homem adulto se exercitando dentro de casa" src={fotoPrincipal} />
 	</section>
 	<section class="mx-auto max-[1366px]:px-6 w-full max-w-7xl">
-		<div class="flex justify-between items-center bg-color-50 px-16 py-6 rounded-2xl">
-			<h5 class="font-heading text-2xl text-shade-40">Atendimento à domicilio</h5>
+		<div class="flex items-center justify-between px-16 py-6 bg-color-50 rounded-2xl">
+			<h5 class="text-2xl font-heading text-shade-40">Atendimento à domicilio</h5>
 			<img alt="asterisco" src={asterisco} />
-			<h5 class="font-heading text-2xl text-shade-40">Comodidade</h5>
+			<h5 class="text-2xl font-heading text-shade-40">Comodidade</h5>
 			<img alt="asterisco" src={asterisco} />
-			<h5 class="font-heading text-2xl text-shade-40">Exercícios personalizados</h5>
+			<h5 class="text-2xl font-heading text-shade-40">Exercícios personalizados</h5>
 		</div>
-	</section>	
+	</section>
 	<section id="profissional" use:scrollRef={'profissional'} class="mx-auto w-full max-w-7xl flex justify-between items-center h-full max-[1366px]:px-6">
-		<h3 class="font-heading text-shade-40 text-2xl uppercase self-start">O profissional</h3>
+		<h3 class="self-start text-2xl uppercase font-heading text-shade-40">O profissional</h3>
 		<div class="flex flex-col max-w-[714px] gap-4">
-			<p class="font-text text-base text-neutral-80 tracking-[.5px]">Pedro Salvarani tem 49 anos e é professor de Educação Física. Graduou-se pela Universidade de Mogi das Cruzes e possui pós-graduação em Educação Especial, além de formação em <strong>Pilates e Atividade Física aplicada no Envelhecimento</strong>.</p>
-			<p class="font-text text-base text-neutral-80 tracking-[.5px]">Com mais de 20 anos de experiência na área, Pedro atuou em escolas, clínicas e academias.
-				No entanto, foi através do <strong>atendimento domiciliar</strong> que encontrou a oportunidade de desenvolver treinos com total eficiência. Acompanhando, orientando, motivando e evoluindo, ele alcançou resultados satisfatórios na vida de pessoas que acreditaram nele, mas, sobretudo, em si mesmas.</p>
+			<p class="font-text text-base text-neutral-80 tracking-[.5px]">
+				Pedro Salvarani tem 49 anos e é professor de Educação Física. Graduou-se pela Universidade de Mogi das Cruzes e possui pós-graduação em Educação Especial, além de formação em <strong>Pilates e Atividade Física aplicada no Envelhecimento</strong>.
+			</p>
+			<p class="font-text text-base text-neutral-80 tracking-[.5px]">
+				Com mais de 20 anos de experiência na área, Pedro atuou em escolas, clínicas e academias. No entanto, foi através do <strong>atendimento domiciliar</strong> que encontrou a oportunidade de desenvolver treinos com total eficiência. Acompanhando, orientando,
+				motivando e evoluindo, ele alcançou resultados satisfatórios na vida de pessoas que acreditaram nele, mas, sobretudo, em si mesmas.
+			</p>
 		</div>
 	</section>
 	<section id="funcionamento" use:scrollRef={'funcionamento'} class="mx-auto w-full max-w-7xl flex flex-col gap-10 justify-between max-[1366px]:px-6">
-		<h3 class="font-heading text-shade-40 text-2xl uppercase">Como funciona</h3>
-		<div class="flex justify-between items-center gap-8">
+		<h3 class="text-2xl uppercase font-heading text-shade-40">Como funciona</h3>
+		<div class="flex items-center justify-between gap-8">
 			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6 rounded-2xl">
 				<img alt="local e horário" src={local} width="48" />
 				<div class="flex flex-col gap-3">
@@ -205,38 +211,38 @@
 		</div>
 	</section>
 	<section id="beneficios" use:scrollRef={'beneficios'} class="mx-auto w-full max-w-7xl flex justify-between items-center h-full max-[1366px]:px-6">
-		<div class="flex flex-col gap-6 self-start">
-			<h3 class="font-heading text-shade-40 text-2xl uppercase self-start">Benefícios</h3>
+		<div class="flex flex-col self-start gap-6">
+			<h3 class="self-start text-2xl uppercase font-heading text-shade-40">Benefícios</h3>
 			<p class="font-text text-base text-neutral-80 tracking-[.5px] max-w-[280px]">Saúde e Bem-Estar Personalizados: Descubra os <strong>Benefícios Exclusivos</strong> do Treinamento Domiciliar</p>
 		</div>
 		<div class="flex flex-col w-full max-w-[620px]">
-			<div class="flex items-center py-6 px-4 gap-6 border-b border-neutral-20">
+			<div class="flex items-center gap-6 px-4 py-6 border-b border-neutral-20">
 				<h5 class="font-heading text-[28px]/9 text-color-80">01</h5>
-				<p class="font-text font-medium text-base/5">Aumento da disposição e autoestima</p>
+				<p class="font-medium font-text text-base/5">Aumento da disposição e autoestima</p>
 			</div>
-			<div class="flex items-center py-6 px-4 gap-6 border-b border-neutral-20">
+			<div class="flex items-center gap-6 px-4 py-6 border-b border-neutral-20">
 				<h5 class="font-heading text-[28px]/9 text-color-80">02</h5>
-				<p class="font-text font-medium text-base/5">Previne e reduz mortalidade por doenças crônicas</p>
+				<p class="font-medium font-text text-base/5">Previne e reduz mortalidade por doenças crônicas</p>
 			</div>
-			<div class="flex items-center py-6 px-4 gap-6 border-b border-neutral-20">
+			<div class="flex items-center gap-6 px-4 py-6 border-b border-neutral-20">
 				<h5 class="font-heading text-[28px]/9 text-color-80">03</h5>
-				<p class="font-text font-medium text-base/5">Aumenta força e resistência muscular</p>
+				<p class="font-medium font-text text-base/5">Aumenta força e resistência muscular</p>
 			</div>
-			<div class="flex items-center py-6 px-4 gap-6 border-b border-neutral-20">
+			<div class="flex items-center gap-6 px-4 py-6 border-b border-neutral-20">
 				<h5 class="font-heading text-[28px]/9 text-color-80">04</h5>
-				<p class="font-text font-medium text-base/5">Reduz sintomas depressivos</p>
+				<p class="font-medium font-text text-base/5">Reduz sintomas depressivos</p>
 			</div>
-			<div class="flex items-center py-6 px-4 gap-6 border-b border-neutral-20">
+			<div class="flex items-center gap-6 px-4 py-6 border-b border-neutral-20">
 				<h5 class="font-heading text-[28px]/9 text-color-80">05</h5>
-				<p class="font-text font-medium text-base/5">Diminuição do risco de lesões</p>
+				<p class="font-medium font-text text-base/5">Diminuição do risco de lesões</p>
 			</div>
-			<div class="flex items-center py-6 px-4 gap-6 border-b border-neutral-20">
+			<div class="flex items-center gap-6 px-4 py-6 border-b border-neutral-20">
 				<h5 class="font-heading text-[28px]/9 text-color-80">06</h5>
-				<p class="font-text font-medium text-base/5">Treino personalizado e individual</p>
+				<p class="font-medium font-text text-base/5">Treino personalizado e individual</p>
 			</div>
-		</div>		
+		</div>
 	</section>
-	<section class="flex gap-8 mx-auto w-full max-w-7xl flex max-[1366px]:px-6">
+	<section class="flex gap-8 mx-auto w-full max-w-7xl max-[1366px]:px-6">
 		<img class="rounded-2xl" alt="Homem idoso se exercitando dentro de casa" src={foto1} />
 		<img class="rounded-2xl" alt="Casal de idosos se exercitando" src={foto2} />
 		<img class="rounded-2xl" alt="Homem idoso se exercitando" src={foto3} />
@@ -251,22 +257,22 @@
 			</div>
 			<form class="flex flex-col gap-8 w-full max-w-[624px] self-end">
 				<div class="flex flex-col gap-2">
-					<input 
-						class="focus:outline-none font-text font-medium text-base/5 text-shade-40 py-5 px-2 border-b border-neutral-20 tracking-[.1px] placeholder-shade-40" 
-						type="text" 
+					<input
+						class="focus:outline-none font-text font-medium text-base/5 text-shade-40 py-5 px-2 border-b border-neutral-20 tracking-[.1px] placeholder-shade-40"
+						type="text"
 						placeholder="Seu nome*"
 						bind:value={nome}
 						on:keyup={() => {
 							validaCampo(nome, 'nome');
 						}}
-						required 
+						required
 					/>
 					{#if !valid_mensagem.nome && nome.length > 0}
 						<span class="font-text text-sm ml-2 text-red-500 tracking-[.1px]">Por favor, digite um nome válido.</span>
 					{/if}
-				</div>				
+				</div>
 				<div class="flex flex-col gap-2">
-				<input
+					<input
 						class="focus:outline-none font-text font-medium text-base/5 text-shade-40 py-5 px-2 border-b border-neutral-20 tracking-[.1px] placeholder-shade-40"
 						type="tel"
 						placeholder="Telefone*"
@@ -312,22 +318,22 @@
 				</div>
 				{#if !enviando}
 					<button class="mt-3 bg-color-50 py-4 rounded-2xl font-text text-base/5 font-medium tracking-[.1px] text-shade-40" on:click={() => enviar()}>Enviar mensagem</button>
-					{:else}
+				{:else}
 					<button class="mt-3 bg-color-50 py-4 rounded-2xl font-text text-base/5 font-medium tracking-[.1px] text-shade-40" on:click={() => enviar()}>Enviando...</button>
 				{/if}
-			</form>			
+			</form>
 		</div>
 	</section>
 	<footer class="bg-shade-20 py-[52px] rounded-b-2xl">
 		<div class="w-full mx-auto max-w-7xl max-[1366px]:px-6 flex flex-col">
 			<div class="flex flex-col gap-4">
-				<h4 class="font-heading text-2xl text-neutral-50">Nosso contato</h4>
+				<h4 class="text-2xl font-heading text-neutral-50">Nosso contato</h4>
 				<div class="flex flex-col gap-1">
 					<p class="font-text text-shade-40 text-base tracking-[.5px]">pedrosalvarani@email.com</p>
 					<p class="font-text text-shade-40 text-base tracking-[.5px]">11 99999-9999</p>
 				</div>
 			</div>
-			<div class="flex gap-4 mx-auto">				
+			<div class="flex gap-4 mx-auto">
 				<a href="https://www.facebook.com" target="_blank"><img alt="facebook" src={facebook} /></a>
 				<a href="https://www.instagram.com" target="_blank"><img alt="instagram" src={instagram} /></a>
 			</div>

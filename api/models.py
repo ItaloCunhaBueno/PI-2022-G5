@@ -8,6 +8,6 @@ class Mensagens(SQLModel, table=True):
 
     id: Optional[int] = Field(default=None, primary_key=True)
     nome: str = Field(nullable=False)
-    telefone: Optional[str]
+    telefone: str = Field(nullable=False)
     email: Optional[str]
     texto: str = Field(nullable=False)
