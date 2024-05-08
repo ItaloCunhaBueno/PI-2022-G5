@@ -24,6 +24,7 @@ engine = create_engine(DB_URL)
 
 SQLModel.metadata.create_all(bind=engine)
 
+
 @app.post("/novamensagem")
 async def nova_mensagem(mensagem: Mensagens):
     """ENDPOINT PARA ENVIAR UMA NOVA MENSAGEM."""
