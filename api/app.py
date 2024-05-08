@@ -24,7 +24,7 @@ engine = create_engine(DB_URL)
 
 SQLModel.metadata.create_all(bind=engine)
 
-@app.get("/")
+@app.get("/teste")
 async def index():
     """ENDPOINT PRINCIPAL."""
     return "API"
