@@ -125,12 +125,12 @@
 	}
 </script>
 
-<div class="bg-shade-10 flex flex-col gap-[132px] w-full h-full rounded-2xl">
+<div class="bg-shade-10 flex flex-col gap-16 notebook:gap-[132px] w-full h-full rounded-2xl">
 	<header class="flex items-center justify-between w-full px-6 py-4 mx-auto mt-8 max-w-7xl">
 		<a href="/">
 			<img src={logo} alt="logo" class="" />
 		</a>
-		<nav>
+		<nav class="hidden tablet:block">
 			<ul class="font-text text-base text-shade-40 flex space-x-14 items-center tracking-[.15px]">
 				<li><a use:scrollTo={{ ref: 'profissional', duration: 1000, offset: -80 }} href="#profissional">O Profissional</a></li>
 				<li><a use:scrollTo={{ ref: 'funcionamento', duration: 1000, offset: -80 }} href="#funcionamento">Como Funciona</a></li>
@@ -144,20 +144,20 @@
 			</div>
 		</button>
 	</header>
-	<section class="mx-auto w-full max-w-7xl flex flex-col gap-16 max-[1366px]:px-6">
-		<div class="flex items-center justify-between h-full">
+	<section class="mx-auto w-full max-w-7xl flex flex-col gap-8 notebook:gap-16 max-[1366px]:px-6">
+		<div class="flex flex-col gap-4 notebook:gap-0 notebook:flex-row notebook:items-center justify-between h-full">
 			<div>
-				<h2 class="font-heading text-shade-40 text-8xl">Pedro</h2>
-				<h2 class="font-heading text-shade-40 text-8xl">Salvarani</h2>
+				<h2 class="font-heading text-shade-40 text-6xl tablet:text-8xl">Pedro</h2>
+				<h2 class="font-heading text-shade-40 text-6xl tablet:text-8xl">Salvarani</h2>
 			</div>
-			<div class="flex flex-wrap self-end max-w-[540px]">
+			<div class="flex flex-wrap self-end notebook:max-w-[540px]">
 				<p class="font-text text-base text-shade-40 tracking-[.5px]">Com mais de 20 anos de experiência, Pedro é um renomado professor de Educação Física, <strong>com especialização em Pilates e atividade física voltada para o envelhecimento</strong>.</p>
 			</div>
 		</div>
 		<img alt="Homem adulto se exercitando dentro de casa" src={fotoPrincipal} />
 	</section>
 	<section class="mx-auto max-[1366px]:px-6 w-full max-w-7xl">
-		<div class="flex items-center justify-between px-16 py-6 bg-color-50 rounded-2xl">
+		<div class="flex flex-col gap-4 tablet:gap-0 tablet:flex-row items-center justify-between px-16 py-6 bg-color-50 rounded-2xl">
 			<h5 class="text-2xl font-heading text-shade-40">Atendimento à domicilio</h5>
 			<img alt="asterisco" src={asterisco} />
 			<h5 class="text-2xl font-heading text-shade-40">Comodidade</h5>
@@ -165,9 +165,9 @@
 			<h5 class="text-2xl font-heading text-shade-40">Exercícios personalizados</h5>
 		</div>
 	</section>
-	<section id="profissional" use:scrollRef={'profissional'} class="mx-auto w-full max-w-7xl flex justify-between items-center h-full max-[1366px]:px-6">
+	<section id="profissional" use:scrollRef={'profissional'} class="mx-auto w-full max-w-7xl flex flex-col gap-6 notebook:gap-0 notebook:flex-row notebook:justify-between notebook:items-center h-full max-[1366px]:px-6">
 		<h3 class="self-start text-2xl uppercase font-heading text-shade-40">O profissional</h3>
-		<div class="flex flex-col max-w-[714px] gap-4">
+		<div class="flex flex-col notebook:max-w-[714px] gap-4">
 			<p class="font-text text-base text-neutral-80 tracking-[.5px]">
 				Pedro Salvarani tem 49 anos e é professor de Educação Física. Graduou-se pela Universidade de Mogi das Cruzes e possui pós-graduação em Educação Especial, além de formação em <strong>Pilates e Atividade Física aplicada no Envelhecimento</strong>.
 			</p>
@@ -179,29 +179,29 @@
 	</section>
 	<section id="funcionamento" use:scrollRef={'funcionamento'} class="mx-auto w-full max-w-7xl flex flex-col gap-10 justify-between max-[1366px]:px-6">
 		<h3 class="text-2xl uppercase font-heading text-shade-40">Como funciona</h3>
-		<div class="flex items-center justify-between gap-8">
-			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6 rounded-2xl">
+		<div class="grid grid-cols-1 tablet:grid-cols-2 notebook:flex items-center justify-between gap-8">
+			<div class="notebook:max-w-[296px] notebook:max-h-[296px] tablet:min-h-[296px] p-8 bg-shade-20 flex flex-col gap-6 rounded-2xl">
 				<img alt="local e horário" src={local} width="48" />
 				<div class="flex flex-col gap-3">
 					<h4 class="font-text text-[22px] leading-7">Local e Horário</h4>
 					<p class="font-text text-base text-neutral-80 tracking-[.5px]">Os treinos são realizados na sua residência ou no espaço que lhe seja favorável, com horários flexíveis e que se ajustam à sua rotina diária.</p>
 				</div>
 			</div>
-			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6 rounded-2xl">
+			<div class="notebook:max-w-[296px] notebook:max-h-[296px] tablet:min-h-[296px] p-8 bg-shade-20 flex flex-col gap-6 rounded-2xl">
 				<img alt="acompanhamento" src={acompanhamento} width="48" />
 				<div class="flex flex-col gap-3">
 					<h4 class="font-text text-[22px] leading-7">Acompanhamento</h4>
 					<p class="font-text text-base text-neutral-80 tracking-[.5px]">Acompanhamento em tempo integral permitindo melhor orientação, correção e segurança na prática da atividade.</p>
 				</div>
 			</div>
-			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6 rounded-2xl">
+			<div class="notebook:max-w-[296px] notebook:max-h-[296px] tablet:min-h-[296px] p-8 bg-shade-20 flex flex-col gap-6 rounded-2xl">
 				<img alt="treinos" src={treinos} width="48" />
 				<div class="flex flex-col gap-3">
 					<h4 class="font-text text-[22px] leading-7">Treinos</h4>
 					<p class="font-text text-base text-neutral-80 tracking-[.5px]">Nossos planos de treino são elaborados de maneira 100% individual a partir de uma minuciosa avaliação.</p>
 				</div>
 			</div>
-			<div class="w-[296px] h-[296px] p-8 bg-shade-20 flex flex-col gap-6 rounded-2xl">
+			<div class="notebook:max-w-[296px] notebook:max-h-[296px] tablet:min-h-[296px] p-8 bg-shade-20 flex flex-col gap-6 rounded-2xl">
 				<img alt="dinamismo" src={dinamismo} width="48" />
 				<div class="flex flex-col gap-3">
 					<h4 class="font-text text-[22px] leading-7">Dinamismo</h4>
@@ -210,12 +210,12 @@
 			</div>
 		</div>
 	</section>
-	<section id="beneficios" use:scrollRef={'beneficios'} class="mx-auto w-full max-w-7xl flex justify-between items-center h-full max-[1366px]:px-6">
+	<section id="beneficios" use:scrollRef={'beneficios'} class="mx-auto w-full max-w-7xl flex flex-col tablet:flex-row justify-between items-center h-full max-[1366px]:px-6">
 		<div class="flex flex-col self-start gap-6">
 			<h3 class="self-start text-2xl uppercase font-heading text-shade-40">Benefícios</h3>
-			<p class="font-text text-base text-neutral-80 tracking-[.5px] max-w-[280px]">Saúde e Bem-Estar Personalizados: Descubra os <strong>Benefícios Exclusivos</strong> do Treinamento Domiciliar</p>
+			<p class="font-text text-base text-neutral-80 tracking-[.5px] notebook:max-w-[280px]">Saúde e Bem-Estar Personalizados: Descubra os <strong>Benefícios Exclusivos</strong> do Treinamento Domiciliar</p>
 		</div>
-		<div class="flex flex-col w-full max-w-[620px]">
+		<div class="flex flex-col w-full notebook:max-w-[620px]">
 			<div class="flex items-center gap-6 px-4 py-6 border-b border-neutral-20">
 				<h5 class="font-heading text-[28px]/9 text-color-80">01</h5>
 				<p class="font-medium font-text text-base/5">Aumento da disposição e autoestima</p>
@@ -242,7 +242,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="flex gap-8 mx-auto w-full max-w-7xl max-[1366px]:px-6">
+	<section class="flex flex-col notebook:flex-row gap-8 mx-auto w-full max-w-7xl max-[1366px]:px-6">
 		<img class="rounded-2xl" alt="Homem idoso se exercitando dentro de casa" src={foto1} />
 		<img class="rounded-2xl" alt="Casal de idosos se exercitando" src={foto2} />
 		<img class="rounded-2xl" alt="Homem idoso se exercitando" src={foto3} />
@@ -252,8 +252,8 @@
 		<h4 class="font-text text-[22px] text-neutral-40 leading-7 uppercase">Contato</h4>
 		<div class="flex flex-col gap-10">
 			<div>
-				<h2 class="font-heading text-shade-40 text-8xl">Vamos</h2>
-				<h2 class="font-heading text-shade-40 text-8xl">Conversar?</h2>
+				<h2 class="font-heading text-shade-40 text-6xl tablet:text-8xl">Vamos</h2>
+				<h2 class="font-heading text-shade-40 text-6xl tablet:text-8xl">Conversar?</h2>
 			</div>
 			<form class="flex flex-col gap-8 w-full max-w-[624px] self-end">
 				<div class="flex flex-col gap-2">
