@@ -7,5 +7,5 @@
 			"includeFiles": "/models.py"
 		}
 	},
-	"routes": [{ "src": "/api/app", "dest": "api/app.py" }]
+	"routes": [{ "src": "/api", "dest": "api/app.py" }]
 }

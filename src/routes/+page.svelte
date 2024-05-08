@@ -98,7 +98,7 @@
 		};
 
 		try {
-			const response = await fetch('/api/app/novamensagem', { method: 'POST', body: JSON.stringify(formdata), headers: { 'Content-Type': 'application/json' } });
+			const response = await fetch('/api/novamensagem', { method: 'POST', body: JSON.stringify(formdata), headers: { 'Content-Type': 'application/json' } });
 			if (response.status == 200) {
 				let resposta = await response.json();
 				toast.success('SUCESSO', { description: resposta.mensagem });
@@ -145,10 +145,10 @@
 		</button>
 	</header>
 	<section class="mx-auto w-full max-w-7xl flex flex-col gap-8 notebook:gap-16 max-[1366px]:px-6">
-		<div class="flex flex-col gap-4 notebook:gap-0 notebook:flex-row notebook:items-center justify-between h-full">
+		<div class="flex flex-col justify-between h-full gap-4 notebook:gap-0 notebook:flex-row notebook:items-center">
 			<div>
-				<h2 class="font-heading text-shade-40 text-6xl tablet:text-8xl">Pedro</h2>
-				<h2 class="font-heading text-shade-40 text-6xl tablet:text-8xl">Salvarani</h2>
+				<h2 class="text-6xl font-heading text-shade-40 tablet:text-8xl">Pedro</h2>
+				<h2 class="text-6xl font-heading text-shade-40 tablet:text-8xl">Salvarani</h2>
 			</div>
 			<div class="flex flex-wrap self-end notebook:max-w-[540px]">
 				<p class="font-text text-base text-shade-40 tracking-[.5px]">Com mais de 20 anos de experiência, Pedro é um renomado professor de Educação Física, <strong>com especialização em Pilates e atividade física voltada para o envelhecimento</strong>.</p>
@@ -157,7 +157,7 @@
 		<img alt="Homem adulto se exercitando dentro de casa" src={fotoPrincipal} />
 	</section>
 	<section class="mx-auto max-[1366px]:px-6 w-full max-w-7xl">
-		<div class="flex flex-col gap-4 tablet:gap-0 tablet:flex-row items-center justify-between px-16 py-6 bg-color-50 rounded-2xl">
+		<div class="flex flex-col items-center justify-between gap-4 px-16 py-6 tablet:gap-0 tablet:flex-row bg-color-50 rounded-2xl">
 			<h5 class="text-2xl font-heading text-shade-40">Atendimento à domicilio</h5>
 			<img alt="asterisco" src={asterisco} />
 			<h5 class="text-2xl font-heading text-shade-40">Comodidade</h5>
@@ -179,7 +179,7 @@
 	</section>
 	<section id="funcionamento" use:scrollRef={'funcionamento'} class="mx-auto w-full max-w-7xl flex flex-col gap-10 justify-between max-[1366px]:px-6">
 		<h3 class="text-2xl uppercase font-heading text-shade-40">Como funciona</h3>
-		<div class="grid grid-cols-1 tablet:grid-cols-2 notebook:flex items-center justify-between gap-8">
+		<div class="grid items-center justify-between grid-cols-1 gap-8 tablet:grid-cols-2 notebook:flex">
 			<div class="notebook:max-w-[296px] notebook:max-h-[296px] tablet:min-h-[296px] p-8 bg-shade-20 flex flex-col gap-6 rounded-2xl">
 				<img alt="local e horário" src={local} width="48" />
 				<div class="flex flex-col gap-3">
@@ -252,8 +252,8 @@
 		<h4 class="font-text text-[22px] text-neutral-40 leading-7 uppercase">Contato</h4>
 		<div class="flex flex-col gap-10">
 			<div>
-				<h2 class="font-heading text-shade-40 text-6xl tablet:text-8xl">Vamos</h2>
-				<h2 class="font-heading text-shade-40 text-6xl tablet:text-8xl">Conversar?</h2>
+				<h2 class="text-6xl font-heading text-shade-40 tablet:text-8xl">Vamos</h2>
+				<h2 class="text-6xl font-heading text-shade-40 tablet:text-8xl">Conversar?</h2>
 			</div>
 			<form class="flex flex-col gap-8 w-full max-w-[624px] self-end">
 				<div class="flex flex-col gap-2">
