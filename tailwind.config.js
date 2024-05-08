@@ -89,6 +89,10 @@ const config = {
 				heading: ['Urbanist', 'sans-serif'],
 				text: ['Roboto', 'sans-serif']
 			}
+		},
+		screens: {
+			'tablet': '960px',
+			'notebook': '1366px',
 		}
 	},
 };
