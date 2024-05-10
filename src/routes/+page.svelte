@@ -245,8 +245,8 @@
 	<section class="flex gap-8 flex-col notebook:flex-row justify-between mx-auto w-full max-w-7xl max-[1366px]:px-6">
 		<img class="rounded-2xl" alt="Homem idoso se exercitando dentro de casa" src={foto1} width="290" />
 		<img class="rounded-2xl" alt="Casal de idosos se exercitando" src={foto2} width="290" />
-		<img class="rounded-2xl" alt="Homem idoso se exercitando" src={foto3} width="290" />
-		<img class="rounded-2xl" alt="Casal de idosos se exercitando na academia" src={foto4} width="290" />
+		<img class="rounded-2xl" alt="Mulher idosa se exercitando" src={foto3} width="290" />
+		<img class="rounded-2xl" alt="Homem idoso se exercitando dentro de casa" src={foto4} width="290" />
 	</section>
 	<section id="contato" use:scrollRef={'contato'} class="flex flex-col gap-[52px] w-full mx-auto max-w-7xl max-[1366px]:px-6">
 		<h4 class="font-text text-[22px] text-neutral-40 leading-7 uppercase">Contato</h4>
