@@ -68,16 +68,10 @@
 		--ring: 0 0% 83.1%;
 	}
 
-	/* .btn-contact::after {
-		content: '';
-		display: inline-block;
-		position: relative;
-		left: 10px;
-		background: url('../src/lib/images/arrow_outward.svg') no-repeat center center;
-		height: 40px;
-		width: 40px;
-		border-radius: 100%;
-	} */
+	img {
+		display: block;
+		max-width: 100%;
+	  }
 }
 
 @layer base {

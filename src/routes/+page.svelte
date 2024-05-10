@@ -8,11 +8,11 @@
 	import acompanhamento from '$lib/images/icons/show_chart.svg';
 	import treinos from '$lib/images/icons/fitness_center.svg';
 	import dinamismo from '$lib/images/icons/animation.svg';
-	import fotoPrincipal from '$lib/images/principal.png';
-	import foto1 from '$lib/images/foto1.png';
-	import foto2 from '$lib/images/foto2.png';
-	import foto3 from '$lib/images/foto3.png';
-	import foto4 from '$lib/images/foto4.png';
+	import fotoPrincipal from '$lib/images/principal.jpg';
+	import foto1 from '$lib/images/foto1.jpg';
+	import foto2 from '$lib/images/foto2.jpg';
+	import foto3 from '$lib/images/foto3.jpg';
+	import foto4 from '$lib/images/foto4.jpg';
 	import facebook from '$lib/images/icons/facebook.png';
 	import instagram from '$lib/images/icons/instagram.png';
 	import { scrollTo, scrollRef } from 'svelte-scrolling';
@@ -154,7 +154,7 @@
 				<p class="font-text text-base text-shade-40 tracking-[.5px]">Com mais de 20 anos de experiência, Pedro é um renomado professor de Educação Física, <strong>com especialização em Pilates e atividade física voltada para o envelhecimento</strong>.</p>
 			</div>
 		</div>
-		<img alt="Homem adulto se exercitando dentro de casa" src={fotoPrincipal} />
+		<img class="rounded-3xl notebook:rounded-2xl" alt="Homem adulto professor de Educação Física" src={fotoPrincipal} />
 	</section>
 	<section class="mx-auto max-[1366px]:px-6 w-full max-w-7xl">
 		<div class="flex flex-col items-center justify-between gap-4 px-16 py-6 tablet:gap-0 tablet:flex-row bg-color-50 rounded-2xl">
@@ -242,11 +242,11 @@
 			</div>
 		</div>
 	</section>
-	<section class="flex flex-col notebook:flex-row gap-8 mx-auto w-full max-w-7xl max-[1366px]:px-6">
-		<img class="rounded-2xl" alt="Homem idoso se exercitando dentro de casa" src={foto1} />
-		<img class="rounded-2xl" alt="Casal de idosos se exercitando" src={foto2} />
-		<img class="rounded-2xl" alt="Homem idoso se exercitando" src={foto3} />
-		<img class="rounded-2xl" alt="Casal de idosos se exercitando na academia" src={foto4} />
+	<section class="flex gap-8 flex-col notebook:flex-row justify-between mx-auto w-full max-w-7xl max-[1366px]:px-6">
+		<img class="rounded-2xl" alt="Homem idoso se exercitando dentro de casa" src={foto1} width="290" />
+		<img class="rounded-2xl" alt="Casal de idosos se exercitando" src={foto2} width="290" />
+		<img class="rounded-2xl" alt="Homem idoso se exercitando" src={foto3} width="290" />
+		<img class="rounded-2xl" alt="Casal de idosos se exercitando na academia" src={foto4} width="290" />
 	</section>
 	<section id="contato" use:scrollRef={'contato'} class="flex flex-col gap-[52px] w-full mx-auto max-w-7xl max-[1366px]:px-6">
 		<h4 class="font-text text-[22px] text-neutral-40 leading-7 uppercase">Contato</h4>
