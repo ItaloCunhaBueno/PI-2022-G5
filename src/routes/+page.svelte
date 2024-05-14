@@ -158,11 +158,11 @@
 	</section>
 	<section class="mx-auto max-[1366px]:px-6 w-full max-w-7xl">
 		<div class="flex flex-col items-center justify-between gap-4 px-16 py-6 tablet:gap-0 tablet:flex-row bg-color-50 rounded-2xl">
-			<h5 class="text-2xl font-heading text-shade-40">Atendimento à domicilio</h5>
+			<h5 class="text-2xl font-heading text-shade-40 text-center">Atendimento à domicilio</h5>
 			<img alt="asterisco" src={asterisco} />
-			<h5 class="text-2xl font-heading text-shade-40">Comodidade</h5>
+			<h5 class="text-2xl font-heading text-shade-40 text-center">Comodidade</h5>
 			<img alt="asterisco" src={asterisco} />
-			<h5 class="text-2xl font-heading text-shade-40">Exercícios personalizados</h5>
+			<h5 class="text-2xl font-heading text-shade-40 text-center">Exercícios personalizados</h5>
 		</div>
 	</section>
 	<section id="profissional" use:scrollRef={'profissional'} class="mx-auto w-full max-w-7xl flex flex-col gap-6 notebook:gap-0 notebook:flex-row notebook:justify-between notebook:items-center h-full max-[1366px]:px-6">
