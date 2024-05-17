@@ -81,6 +81,7 @@
 
 	async function enviar() {
 		if (Object.values(valid_mensagem).includes(false)) {
+			id="id-msgAvisoErro"
 			toast.error('Por favor, preencha todos os campos.', {
 				description: 'Um ou mais campos preenchidos não são válidos.'
 			});
@@ -132,12 +133,12 @@
 		</a>
 		<nav class="hidden tablet:block">
 			<ul class="font-text text-base text-shade-40 flex space-x-14 items-center tracking-[.15px]">
-				<li><a use:scrollTo={{ ref: 'profissional', duration: 1000, offset: -80 }} href="#profissional">O Profissional</a></li>
-				<li><a use:scrollTo={{ ref: 'funcionamento', duration: 1000, offset: -80 }} href="#funcionamento">Como Funciona</a></li>
-				<li><a use:scrollTo={{ ref: 'beneficios', duration: 1000, offset: -80 }} href="#beneficios">Benefícios</a></li>
+				<li><a use:scrollTo={{ ref: 'profissional', duration: 1000, offset: -80 }} id="id-profissionalButton" href="#profissional">O Profissional</a></li>
+				<li><a use:scrollTo={{ ref: 'funcionamento', duration: 1000, offset: -80 }} id="id-funcionamentoButton" href="#funcionamento">Como Funciona</a></li>
+				<li><a use:scrollTo={{ ref: 'beneficios', duration: 1000, offset: -80 }} id="id-beneficiosButton" href="#beneficios">Benefícios</a></li>
 			</ul>
 		</nav>
-		<button use:scrollTo={{ ref: 'contato', duration: 1000 }} class="flex items-center space-x-[-10px]">
+		<button use:scrollTo={{ ref: 'contato', duration: 1000 }} id="id-contatoButton" href="#contato" class="flex items-center space-x-[-10px]">
 			<div class="px-6 py-3 text-shade-40 font-text font-medium leading-5 tracking-[.1px] bg-color-50 rounded-[40px] btn-contact">Entre em contato</div>
 			<div class="flex justify-center w-10 h-10 rounded-full bg-color-50">
 				<img alt="seta" src={seta} width="18" height="18" />
@@ -260,6 +261,7 @@
 					<input
 						class="focus:outline-none font-text font-medium text-base/5 text-shade-40 py-5 px-2 border-b border-neutral-20 tracking-[.1px] placeholder-shade-40"
 						type="text"
+						id="id-nomeInput"
 						placeholder="Seu nome*"
 						bind:value={nome}
 						on:keyup={() => {
@@ -275,6 +277,7 @@
 					<input
 						class="focus:outline-none font-text font-medium text-base/5 text-shade-40 py-5 px-2 border-b border-neutral-20 tracking-[.1px] placeholder-shade-40"
 						type="tel"
+						id="id-telefoneInput"
 						placeholder="Telefone*"
 						bind:value={telefone}
 						on:keyup={() => {
@@ -291,6 +294,7 @@
 					<input
 						class="focus:outline-none font-text font-medium text-base/5 text-shade-40 py-5 px-2 border-b border-neutral-20 tracking-[.1px] placeholder-shade-40"
 						type="email"
+						id="id-emailInput"
 						placeholder="E-mail"
 						bind:value={email}
 						on:keyup={() => {
@@ -305,6 +309,7 @@
 					<textarea
 						class="focus:outline-none font-text font-medium text-base/5 text-shade-40 py-5 px-2 border-b border-neutral-20 tracking-[.1px] placeholder-shade-40"
 						rows="5"
+						id="id-msgInput"
 						placeholder="Sua mensagem*"
 						bind:value={texto}
 						on:keyup={() => {
@@ -317,7 +322,7 @@
 					{/if}
 				</div>
 				{#if !enviando}
-					<button class="mt-3 bg-color-50 py-4 rounded-2xl font-text text-base/5 font-medium tracking-[.1px] text-shade-40" on:click={() => enviar()}>Enviar mensagem</button>
+					<button class="mt-3 bg-color-50 py-4 rounded-2xl font-text text-base/5 font-medium tracking-[.1px] text-shade-40"  id="id-enviarMsgButton" on:click={() => enviar()}>Enviar mensagem</button> 
 				{:else}
 					<button class="mt-3 bg-color-50 py-4 rounded-2xl font-text text-base/5 font-medium tracking-[.1px] text-shade-40" on:click={() => enviar()}>Enviando...</button>
 				{/if}
