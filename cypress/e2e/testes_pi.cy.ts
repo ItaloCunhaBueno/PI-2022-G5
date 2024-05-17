@@ -19,37 +19,48 @@ describe('Cenários de testes', () => {
     cy.visit(urlHome);
   });
 
-  it('Deve acessar a urlHome e validar se a página está abrindo corretamente', () => {
+  it('Deve acessar a Home e validar se a página está abrindo corretamente', () => {
     cy.url().should('eq', urlHome);
   });
 
-  it('Deve acessar a urlHome, clicar em profissionalButton e validar se a url muda para urlProfissional', () => {
+  it('Deve acessar a Home, clicar em O profissional e validar se a página tem o comportamento correto', () => {
     cy.get(profissionalButton).click();
     cy.url().should('eq', urlProfissional);
   });
 
-  it('Deve acessar a urlHome, clicar em funcionamentoButton e validar se a url muda para urlFuncionamento', () => {
+  it('Deve acessar a Home, clicar em Como Funciona e validar se a página tem o comportamento correto', () => {
     cy.get(funcionamentoButton).click();
     cy.url().should('eq', urlFuncionamento);
   });
 
-  it('Deve acessar a urlHome, clicar em beneficiosButton e validar se a url muda para urlBeneficios', () => {
+  it('Deve acessar a Home, clicar em Benefícios e validar se a página tem o comportamento correto', () => {
     cy.get(beneficiosButton).click();
     cy.url().should('eq', urlBeneficios);
   });
 
-  it('Deve acessar a urlHome, clicar em contatoButton e validar se contatoCard é visível', () => {
+  it('Deve acessar a Home, clicar em Entre em Contato e validar se a página tem o comportamento correto', () => {
     cy.get(contatoButton).click();
     cy.get(contatoCard).should('be.visible');
   });
 
-  it('Deve preencher o formulário de contato e validar se a mensagem de sucesso é visível', () => {
+  it('Deve preencher o formulário de contato e validar se recebemos a resposta correta da API junto com a mensagem de sucesso', () => {
+    
+    cy.intercept('POST', '/api/novamensagem', (req) => {
+      req.continue((res) => {
+        expect(res.statusCode).to.equal(200);
+        expect(res.body).to.have.property('status', 200);
+        expect(res.body).to.have.property('mensagem', 'Mensagem enviada com sucesso!');
+      });
+    }).as('postContato');
+  
     cy.get(nomeInput).type('Teste Teste Teste');
     cy.get(telefoneInput).type('1234567890');
     cy.get(emailInput).type('teste@teste.com');
     cy.get(msgInput).type('Teste Teste Teste');
+    
     cy.get(enviarMsgButton).click();
-    cy.get(msgAVisoErro).should('not.be.visible');
+    
+    cy.wait('@postContato');
   });
 
 
