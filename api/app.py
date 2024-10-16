@@ -1,4 +1,3 @@
-
 import os
 
 from fastapi import FastAPI
@@ -12,7 +11,7 @@ app = FastAPI()
 origins = ["*"]
 
 app.add_middleware(
-    CORSMiddleware,
+    middleware_class=CORSMiddleware,
     expose_headers=["*"],
     allow_origins=origins,
     allow_credentials=True,
@@ -24,18 +23,20 @@ engine = create_engine(DB_URL)
 
 SQLModel.metadata.create_all(bind=engine)
 
+
 @app.get("/api/teste")
-async def index():
+async def index() -> str:
     """ENDPOINT PRINCIPAL."""
     return "API"
 
+
 @app.post("/api/novamensagem")
-async def nova_mensagem(mensagem: Mensagens):
+async def nova_mensagem(mensagem: Mensagens) -> dict[str, str | int]:
     """ENDPOINT PARA ENVIAR UMA NOVA MENSAGEM."""
     with Session(engine) as session:
         session.add(mensagem)
         session.commit()
-    return {"status":200, "mensagem":"Mensagem enviada com sucesso!"}
+    return {"status": 200, "mensagem": "Mensagem enviada com sucesso!"}
 
 
 # if __name__ == "__main__":
