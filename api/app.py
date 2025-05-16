@@ -1,10 +1,10 @@
 import os
 
+import yagmail
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from models import Mensagens
 from sqlmodel import Session, SQLModel, create_engine
-import yagmail
 
 DB_URL = os.environ.get("SQL_ALCHEMY_URL")
 FROM_EMAIL = os.environ.get("FROM_EMAIL")
@@ -13,7 +13,6 @@ EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
 
 app = FastAPI()
 origins = ["*"]
-
 app.add_middleware(
     middleware_class=CORSMiddleware,
     expose_headers=["*"],
