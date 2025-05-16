@@ -1,12 +1,15 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+	"env": {
+		"PYTHONPATH": "api/"
+	},
 	"functions": {
 		"api/app.py": {
-			"includeFiles": "api/models.py"
+			"includeFiles": "/models.py"
 		}
 	},
 	"routes": [
-			{ "src": "/api/novamensagem", "dest": "api/app.py" },
-			{ "src": "/api/teste", "dest": "api/app.py" }
+		{ "src": "/api/novamensagem", "dest": "api/app.py" },
+		{ "src": "/api/teste", "dest": "api/app.py" }
 	]
 }
