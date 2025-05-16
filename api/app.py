@@ -41,13 +41,13 @@ def enviar_email(mensagem: Mensagens):
 
 
 @app.get("/api/teste")
-async def index() -> str:
+async def index():
     """ENDPOINT PRINCIPAL."""
     return "API"
 
 
 @app.post("/api/novamensagem")
-async def nova_mensagem(mensagem: Mensagens) -> dict[str, str | int]:
+async def nova_mensagem(mensagem: Mensagens):
     """ENDPOINT PARA ENVIAR UMA NOVA MENSAGEM."""
     with Session(engine) as session:
         session.add(mensagem)
